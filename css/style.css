@@ -5,18 +5,15 @@
     --dark-blue:#32425C;
     --green:#63A63E;
     /*header-background*/
-    --white-header:rgba(0, 0, 0, 0.0001);
     --shadow-nav:inset 0px -5px 0px #293449;
     /*order-link*/
     --green-hover:#5FBB2D;
-    --green-focus:#63A63E;
     --white-focus:rgba(255, 255, 255, 0.5);
     --blue-focus:#161D29;
     /*login*/
     --grey-words:#C5C5C5;
     /*nav*/
-    --hover: #293449;
-    --focus: #1D2739;
+    --darkened-blue: #1D2739;
     /*facilities*/
     --yellow-material:#FFBF47;
     --bright-blue:#3BBCE3;
@@ -32,13 +29,16 @@
     --shadow:0px 1px 0px #293449, inset 0px 1px 0px #405069;
     /*header-top & footer-bottom*/
     --black: #293449;
-    --total-black:#000000;
     /*logo*/
     --shadow-red: inset 0px -5px 0px rgba(0, 0, 0, 0.24);
     --yellow-words: #FFD180;
     /*button*/
     --red-hover:#CA2C37;
     --red-focus:#BA2732;
+    /*perforators*/
+    --blue: #F2F6F8;
+    --yellow-background:#F7F3EC;
+    --light-grey: #EAEAEA;
 }
 
 body{
@@ -50,17 +50,17 @@ body{
     background-color: var(--white);
 }
 
-.page a{
+a{
     text-decoration: none;
     color: inherit;
 }
-.page img{
+img{
     max-width: 100%;
     height: auto;
 }
                             /* HEADER */
 .header{
-    background-color:var(--white-header);;
+    background-color:var(--white);;
 }
 .header-top{
     font-size: 18px;
@@ -91,7 +91,7 @@ body{
 }
 .order-link:focus{
     color: var(--white-focus);
-    background-color: var(--green-focus);
+    background-color: var(--green);
 }
 .header-middle{
     background-color: var(--light-blue);
@@ -115,6 +115,7 @@ body{
     font-size: 14px;
     line-height: 24px;
     text-align: center;
+    color: var(--dark-blue);
 }
 .login{
     font-size: 21px;
@@ -146,10 +147,10 @@ body{
 }
 
 .site-nav a:hover{
-    background-color: var(--hover);
+    background-color: var(--black);
 }
 .site-nav a:focus{
-    background-color: var(--focus);
+    background-color: var(--darkened-blue);
 }
                             /* MAIN */
 .container{
@@ -189,7 +190,7 @@ body{
     background-repeat: no-repeat;
 }
 .facilities-item-perforator{
-    background-color: var(--white-header);
+    background-color: var(--white);
 }
 .facilities-perforator-list{
     list-style:none;
@@ -283,7 +284,7 @@ body{
 }
 .services-bottom-item-guarantee:hover,
 .services-bottom-item-credit:hover{
-    background-color: var(--hover);
+    background-color: var(--black);
 }
 .services-bottom-list{
     list-style:none;
@@ -361,6 +362,66 @@ body{
     font-size: 13px;
     line-height: 24px;
     color: var(--total-black)
+}
+                            /* CATALOG */
+.my-orders{
+    font-size: 16px;
+    line-height: 18px;
+    text-align: center;
+    color: var(--dark-blue);
+}
+.directories-list{
+    list-style:none;
+}
+.directories-list-item{
+    font-family: PT Sans;
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 18px;
+    text-transform: uppercase;
+    color: var(--total-black);
+}
+.filters-sorting-title{
+    font-family: PT Sans;
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 18px;
+    text-transform: uppercase;
+    color: var(--total-black);
+    background-color: var(--yellow-background);
+}
+.perforators-title{
+    font-size: 30px;
+    line-height: 30px;  
+    text-transform: uppercase;
+    color: var(--dark-blue);
+    background-color: var(--blue);
+}
+.perforators-list{
+    list-style:none;
+}
+.perforators-item{
+    border: 1px solidvar(--light-grey);
+    box-sizing: border-box; 
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.two-words-about-perforators{
+    background-color: var(--light-blue);
+}
+.two-words-about-perforators-title{
+    font-size: 30px;
+    line-height: 30px;
+    text-transform: uppercase;
+}
+.two-words-about-perforators-description{
+    font-family: PT Sans;
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 24px;
+    color: var(--total-black);
+}
+.number-pages-list{
+    list-style: none;
 }
                             /* FOOTER */
 .footer-top{
