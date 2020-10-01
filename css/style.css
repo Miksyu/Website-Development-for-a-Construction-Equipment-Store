@@ -68,6 +68,10 @@ img{
     color: var(--white);
     background-color: var(--dark-blue);
 }
+.logo{
+    background-image: url("img/Object.svg");
+    background-size: 220px 47px;
+}
 .bookmark-link{
     font-size: 18px;
     line-height: 24px;
@@ -85,6 +89,7 @@ img{
     font-size: 18px;
     line-height: 24px;
     background-color: var(--green);
+    background-size: 150px 42px;
 }
 .order-link:hover{
     background-color: var(--green-hover);
@@ -114,7 +119,6 @@ img{
 .header-middle-adress{
     font-size: 14px;
     line-height: 24px;
-    text-align: center;
     color: var(--dark-blue);
 }
 .login{
@@ -185,8 +189,9 @@ img{
 .facilities-item-delivery{
     background-color: var(--yellow-delivery);
 }
-.facilities-perforator{
-    background-image: url("../img/Layer99.png");
+.facilities-perforator-item{
+    background-image: url("../img/man.jpg");
+    background-size: 620px 266px;
     background-repeat: no-repeat;
 }
 .facilities-item-perforator{
@@ -234,12 +239,16 @@ img{
 .goods-list{
     list-style:none;
 }
+.goods-item{
+    border: 1px solidvar(--light-grey);
+    box-sizing: border-box; 
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
 .goods-description{
     font-family: PT Sans;
     font-weight: 700 bold;
     font-size: 18px;
     line-height: 20px;
-    text-align: center;
     color: var(--total-black)
 }
 .goods-old-price{
@@ -247,7 +256,6 @@ img{
     font-weight: 700 bold;
     font-size: 17px;
     line-height: 18px;
-    text-align: center;
     text-decoration-line: line-through;
     text-transform: uppercase;
     color: var(--grey);
@@ -258,7 +266,12 @@ img{
     font-size: 17px;
     line-height: 18px;
     color: var(--white);
-    background-color: var(--red);
+    border: medium none;
+    background: transparent;
+    background-image: url("../img/red-button.svg");
+    background-size: auto;
+    background-color: transparent;
+    font-size: relative-size;
 }
 .manufactures-list{
     list-style:none;
@@ -485,7 +498,7 @@ img{
 }
 .social-button:hover,
 .social-button:focus {
-    background-color: var(--white);
+    background-image: url("../img/bg-social-focus.png");
 }
 
 .footer-bottom-mail{
