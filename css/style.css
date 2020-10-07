@@ -354,8 +354,10 @@ img{
     font-family: PT Sans;
     font-weight: 400;
     font-size: 13px;
+    max-width: 394px;
     line-height: 24px;
     color: var(--total-black);
+    max-width: 400px;
 }
 .services-bottom-item-guarantee:hover,
 .services-bottom-item-credit:hover{
@@ -403,6 +405,7 @@ img{
     font-size: 13px;
     line-height: 24px;
     color: var(--total-black);
+    max-width: 300px;
 }
 .contacts-left-title{
     font-size: 30px;
@@ -419,7 +422,8 @@ img{
     font-weight: 400;
     font-size: 13px;
     line-height: 24px;
-    color: var(--total-black)
+    color: var(--total-black);
+    max-width: 460px;
 }
 .contacts-companies{
     font-size: 18px;
