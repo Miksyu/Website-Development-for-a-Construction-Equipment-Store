@@ -13,7 +13,7 @@
 <header class="header">
   <div class="header-top">
     <div class="header-top-content">
-    <img src="img/логотип.svg" width="220" height="47" alt="Техномарт">
+    <img src="img/logo-technomart (2).svg" class="logo1"> <img src="img/Object (5).svg" width="220" height="47" alt="Техномарт" class="logo">
     <form action="https://echo.htmlacademy.ru/courses" method="post">
       
       <button type="submit">
@@ -34,8 +34,9 @@
       Интернет-магазин строительных материалов
       и инструментов для ремонта
     </p>
-    <div class="header-middle-contacts">
+    <div class="header-middle-contacts"> 
       <div class="header-middle-tel">
+        <img src="img/icon-phone (1).svg">
         <a href="tel:+78125550555">+7 (812) 555-05-55</a>
       </div>
       <p class="header-middle-adress">
@@ -62,9 +63,10 @@
   </nav>
 </header>
 
-<main class="container">
+<main>
   <section class="facilities">
-    <h2>Список товаров и услуг</h2>
+    <div  class="container">
+    <h2 class="visually-hidden">Список товаров и услуг</h2>
     <ul class="facilities-list">
       <li class="facilities-item-materials">
     <h3 class="facilities-article">Материалы</h3>
@@ -81,9 +83,9 @@
     <p class="facilities-subtitle">Для стройки</p> 
     <img src="img/icon-3.svg" width="78" height="62" alt="icon-technique">
       </li>
-      <li>
-        <figure class="facilities-item-perforator">
-          <img src="img/man.jpg">
+      <li class="facilities-item-perforator">
+        <figure>
+          <img src="img/man.jpg" width="620" height="266" alt="perforator-man" class="pic-perfomator">
           <figcaption>
                 <h3 class="facilities-perforator-title">Перфораторы</h3>
                 <p class="facilities-perforator-subtitle">Настоящие мужские игрушки</p>
@@ -99,13 +101,15 @@
       <li class="facilities-item-delivery">
     <h3 class="facilities-article">Доставка</h3>
     <p class="facilities-subtitle">Бесплатно</p>
-    <img src="img/icon-5.svg" width="78" height="63" alt="icon-materials">
+    <img src="img/icon-5.svg" width="78" height="63" alt="icon-materials" class="facilities-icon">
       </li>
 
     </ul>
+    </div> 
   </section>
 
   <section class="goods">
+    <div  class="container">
     <h2 class="goods-manufactures-title">Популярные товары
       <a href="#" class="red-button">Все популярные товары</a>
     </h2>
@@ -141,10 +145,13 @@
         </a>
         <button type="button" class="goods-new-price">12500 Р.</button>
       </li>
+      </ul>
+    </div>
   </section>
 
 
   <section class="manufactures">
+    <div  class="container">
     <h2 class="goods-manufactures-title">Популярные производители
     <a href="#" class="red-button">Все производители</a>
     </h2>
@@ -190,9 +197,11 @@
         </a>
       </li>
     </ul>
+    </div>
   </section>
 
   <section class="services">
+    <div class="container">
     <div class="services-content">
     <div class="services-top">
       <h2 class="services-title">Сервисы</h2>
@@ -203,17 +212,17 @@
       <ul class="services-bottom-list">
         <li>
           <div class="services-bottom-item-delivery">
-            <h3 class="services-bottom-title">Доставка</h3>
+            <label class="services-bottom-title">Доставка</label>
           </div>
         </li>
         <li>
           <div class="services-bottom-item-guarantee">
-            <h3 class="services-bottom-title">Гарантия</h3>
+            <label class="services-bottom-title">Гарантия</label>
           </div>
         </li>
         <li>
           <div class="services-bottom-item-credit">
-            <h3 class="services-bottom-title">Кредит</h3>
+            <label class="services-bottom-title">Кредит</label>
           </div>
         </li>
       </ul>
@@ -238,10 +247,13 @@
       </div>
     </div>
   </div>
+  </div>
   </section>
 
+  <div  class="container">
   <div class="contacts">
     <section class="contacts-left">
+      
       <h2 class="contacts-left-title">Компания "Техномарт"</h2>
       <p class="contacts-left-description">
         Настоящий мужской шоппинг начинается здесь!
@@ -262,6 +274,7 @@
     <a href="#" class="red-button">Подробнее о компании</a>
     </section>
     <section class="contacts-right">
+
       <h2 class="contacts-right-title">Контакты</h2>
       <p class="contacts-right-description">
         Вы можете забрать товар сами, заехав в наш офис:
@@ -271,6 +284,7 @@
       </a>
       <a href="#" class="contacts-link red-button">Заблудились? Напишите нам!</a>
     </section>
+  </div>
   </div>
 
 </main>

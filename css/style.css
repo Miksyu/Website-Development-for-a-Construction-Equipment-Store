@@ -4,8 +4,6 @@
     --red: #EE3643;
     --dark-blue:#32425C;
     --green:#63A63E;
-    /*header-background*/
-    --shadow-nav:inset 0px -5px 0px #293449;
     /*order-link*/
     --green-hover:#5FBB2D;
     --white-focus:rgba(255, 255, 255, 0.5);
@@ -26,11 +24,11 @@
     --grey:#A9A9A9;
     /*services*/
     --light-blue:#F1F5F7;
-    --shadow:0px 1px 0px #293449, inset 0px 1px 0px #405069;
     /*header-top & footer-bottom*/
     --black: #293449;
+    --light-black:#405069;
     /*logo*/
-    --shadow-red: inset 0px -5px 0px rgba(0, 0, 0, 0.24);
+    --shadow-red: rgba(0, 0, 0, 0.24);
     --yellow-words: #FFD180;
     /*button*/
     --red-hover:#CA2C37;
@@ -45,7 +43,7 @@ body{
     min-width: 1200px;
     margin: 0;
     padding: 0;
-    font-family: "Cuprum", Arial, sans-serif;
+    font-family: "Cuprum", "Arial", sans-serif;
     font-weight: 400;
     background-color: var(--white);
 }
@@ -74,8 +72,12 @@ img{
 .header{
     background-color:var(--white);
 }
+.logo1{
+    position:absolute;
+}
 .header-top{
     background-color: var(--dark-blue);
+    height:42px;
 }
 .header-top-content{
     width: 940px;
@@ -124,17 +126,22 @@ img{
 }
 .header-middle-content{
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 197px 270px 1fr;
     width: 940px;
     margin: 0 auto;
     padding: 0 10px;
+    gap:80px;
 }
 .header-description{
+    margin-top: 42,5px;
     justify-self: left;
     font-style: italic;
     font-size: 16px;
     line-height: 23px;
     color: var(--red);
+}
+.header-middle-contacts{
+    margin-top: 46px;
 }
 .header-middle-tel{
     justify-self: center;
@@ -145,12 +152,15 @@ img{
     color: var(--red);
     border: 3px solid var(--white);
     box-sizing: border-box;
+    text-align: center;
 }
 .header-middle-adress{
     justify-self: center;
     font-size: 14px;
     line-height: 24px;
     color: var(--dark-blue);
+    text-align: center;
+    margin-top: 3px;
 }
 .login{
     justify-self: right;
@@ -159,6 +169,12 @@ img{
     color: var(--total-black);
     background-color: var(--white);
     border: 3px solid var(--white);
+    margin-top: 46px;
+    margin-bottom: 67px;
+    padding-top:12px;
+    padding-bottom:12px;
+    padding-left: 20px;
+    padding-right: 24px;
 }
 .login:hover{
     color: var(--red);
@@ -174,8 +190,8 @@ img{
     line-height: 24px;
     color: var(--white);
     background-color: var(--dark-blue);
-    box-shadow: var(--shadow-nav);
-
+    box-shadow: inset 0px -5px 0px var(--black);
+    
 }
 .site-nav{
     list-style: none;
@@ -198,19 +214,18 @@ img{
 }
                             /* MAIN */
 .container{
-    background-color: var(--white);
     width: 940px;
     margin: 0 auto;
     padding: 0 10px;
 }
-
 .facilities-list{
     list-style:none;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    column-gap: 20px;
-    margin: 0;
-    padding: 0;
+    grid-template-columns: 300px 300px 300px;
+    grid-template-rows:123px 123px 123px;
+    gap: 20px;
+    margin-left:0px;
+    
 }
 .facilities-article{
     font-weight: bold;
@@ -237,9 +252,14 @@ img{
 }
 .facilities-item-delivery{
     background-color: var(--yellow-delivery);
+    grid-column-start:3;
+    grid-column-end:4;
 }
 .facilities-item-perforator{
+    display:grid;
     background-color: var(--white);
+    grid-column-start:1;
+    grid-column-end:3;
 }
 .facilities-perforator-title{
     font-weight: bold;
@@ -247,12 +267,22 @@ img{
     line-height: 36px;
     text-transform: uppercase;
     color: var(--white);
-    position: absolute;
+    position: relative;
+    padding-left:24px;
 }
 .facilities-perforator-subtitle{
     font-size: 18px;
     line-height: 24px;
     color: var(--white);
+    position: relative;
+    padding-left:24px;
+    padding-top: 23px;
+}
+.facilities-icon{
+    position: absolute;
+    float:right;
+}
+.pic-perfomator{
     position: absolute;
 }
 .manufactures-pic{
@@ -265,6 +295,7 @@ img{
     text-transform: uppercase;
     color: var(--white);
     background-color: var(--red);
+    position:absolute;
 }
 .red-button:hover{
     background-color: var(--red-hover);
@@ -272,12 +303,17 @@ img{
 .red-button:focus{
     background-color: var(--red-focus);
 }
+.goods{
+    margin-top: 59px;
+    margin-bottom: 70px;
+}
 .goods-manufactures-title{
     font-size: 30px;
     line-height: 30px;
     text-transform: uppercase;
     color: var(--dark-blue);
     background-color: var(--light-yellow);
+    padding:30px;
 }
 .goods-list{
     list-style:none;
@@ -291,8 +327,8 @@ img{
     width: 220px;
     min-height:318px;
     border: 1px solidvar(--light-grey);
-    box-sizing: border-box; 
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border: 1px solid #EAEAEA;
+    box-sizing: border-box;
 }
 .goods-description{
     font-family: PT Sans;
@@ -326,13 +362,23 @@ img{
 .manufactures-list{
     list-style:none;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    column-gap: 20px;
+    grid-template-columns: 220px 220px 220px 220px;
+    grid-template-rows: 145px 145px;
+    gap: 20px;
     margin: 0;
     padding: 0;
 }
+.manufactures-item{  
+    border: 1px solid var(--light-grey);
+    box-sizing: border-box;
+}
+.manufactures-pic{
+    position: absolute;
+}
 .services{
     background-color: var(--light-blue);
+    margin-top:70px;
+    margin-bottom:70px;
 }
 .services-content{
     width: 940px;
@@ -346,9 +392,15 @@ img{
     line-height: 30px;
     text-transform: uppercase;
     color: ver(--total-black);
+    
 }
 .services-bottom-list{
     list-style:none;
+    width:240px;
+    margin:0;
+}
+.services-bottom-title{
+    padding-left: 22px;
 }
 .services-description{
     font-family: PT Sans;
@@ -372,7 +424,7 @@ img{
     line-height: 30px;
     color: var(--dark-blue);
     background-color: var(--white);
-    box-shadow: var(--shadow);
+    box-shadow: 0px 1px 0px var(--black), inset 0px 1px 0px var(--light-black);
 }
 .services-bottom-item-guarantee{
     font-weight: bold;
@@ -380,7 +432,7 @@ img{
     line-height: 30px;
     color: var(--white);
     background-color: var(--dark-blue);
-    box-shadow: var(--shadow);
+    box-shadow: 0px 1px 0px var(--black), inset 0px 1px 0px var(--light-black);
 }
 .services-bottom-item-credit{
     font-weight: bold;
@@ -388,7 +440,7 @@ img{
     line-height: 30px;
     color: var(--white);
     background-color: var(--dark-blue);
-    box-shadow: var(--shadow);
+    box-shadow: 0px 1px 0px var(--black), inset 0px 1px 0px var(--light-black);
 }
 .services-delivery-list{
     list-style:none;
@@ -412,6 +464,7 @@ img{
     line-height: 30px;
     text-transform: uppercase;
     color: var(--total-black);
+    
 }
 .contacts{
     display: grid;
@@ -455,6 +508,12 @@ img{
 }
 .directories-list{
     list-style:none;
+    width: 940px;
+    margin: 0 auto;
+    margin-top:21px;
+    padding: 0 10px;
+    display: grid;
+    grid-template-columns: 1fr;
 }
 .directories-list-item{
     font-family: PT Sans;
@@ -464,7 +523,15 @@ img{
     text-transform: uppercase;
     color: var(--total-black);
 }
-.filters-sorting-title{
+.catalog-grid{
+    width: 940px;
+    margin: 0 auto;
+    padding: 0 10px;
+    display: grid;
+    gap:20px;
+    grid-template-columns: 220px 220px 220px 220px;
+}
+.filters-title{
     font-family: PT Sans;
     font-weight: 400;
     font-size: 13px;
@@ -472,6 +539,29 @@ img{
     text-transform: uppercase;
     color: var(--total-black);
     background-color: var(--yellow-background);
+    padding-left:18px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    width:1fr
+}
+.sorting{
+    display:grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+.sorting-list{
+    list-style: none;
+}
+.sorting-title{
+    font-family: PT Sans;
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 18px;
+    text-transform: uppercase;
+    color: var(--total-black);
+    background-color: var(--yellow-background);
+    padding-left:20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
 .filter-item {
     margin: 0;
@@ -555,9 +645,20 @@ img{
 .filter-list{
     list-style: none;
 }
+.div-perforators-title{
+    width: 940px;
+    margin: 0 auto;
+    margin-top:21px;
+    padding: 0 10px;
+    display: grid;
+    grid-template-columns: 1fr;
+}
 .perforators-title{
     font-size: 30px;
     line-height: 30px;  
+    padding-left:29px;
+    padding-top:29px;
+    padding-bottom:30px;
     text-transform: uppercase;
     color: var(--dark-blue);
     background-color: var(--blue);
@@ -566,9 +667,8 @@ img{
     list-style:none;
 }
 .perforators-item{
-    border: 1px solidvar(--light-grey);
-    box-sizing: border-box; 
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border: 1px solid var(--light-grey);
+    box-sizing: border-box;
 }
 .two-words-about-perforators{
     background-color: var(--light-blue);
@@ -590,7 +690,7 @@ img{
 }
                             /* FOOTER */
 .footer{
-    margin-top: 65px;
+    margin-top: 70px;
     background-color: var(--dark-blue);
 }
 
@@ -608,7 +708,7 @@ img{
 }
 .logo{
     background-color: var(--red);
-    box-shadow: var(--shadow-red);
+    box-shadow: inset 0px -5px 0px var(--shadow-red);
 }
 .footer-top-navigation{
     font-size: 18px;
