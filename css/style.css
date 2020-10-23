@@ -931,6 +931,8 @@ img{
     font-size: 18px;
     line-height: 24px;
     color:var(--light-blue);
+    justify-content: flex-end;
+
 }
 .footer-top-navigation-list{
     list-style:none;
@@ -942,6 +944,7 @@ img{
     align-items: center;
     margin-top: 37px;
     padding: 0;
+
 }
 
 .footer-top-navigation-item{
@@ -951,6 +954,7 @@ img{
     align-self: center;
     flex-grow: 0;
     margin-right: 58px;
+
 }
 .footer-middle{
     background-color: var(--dark-blue);
@@ -1047,7 +1051,10 @@ img{
     background-color: var(--red);
 }
 .footer-bottom-contacts{
-    display: inline-block;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    gap:51px;
     vertical-align: middle ;
     margin-left: 118px;
     font-size: 16px;
