@@ -45,7 +45,7 @@
       <p class="header-middle-adress">г. Санкт-Петербург, ул. Б. Конюшенная, д. 19/8
       </p>
     </div>
-    <div>
+    <div class="user-menu">
       <button type="submit" class="login log"><img src="img/icon-login.svg" class="icon-login"> Войти</button>
       <button type="submit" class="login reg">Регистрация</button>
     </div>
@@ -70,20 +70,25 @@
     <div  class="container">
     <h2 class="visually-hidden">Список товаров и услуг</h2>
     <ul class="facilities-list">
-      <li class="facilities-item-materials">
+      <li class="facilities-item facilities-item-materials goods-item-new">
     <h3 class="facilities-article">Материалы</h3>
-    <p class="facilities-subtitle">На любой вкус</p>
-    <img src="img/icon-1.svg" width="44" height="65" alt="icon-materials">
+    <a href="#" class="facilities-subtitle">На любой вкус</a>
       </li>
-      <li class="facilities-item-tools">
+      <li class="facilities-item facilities-item-tools">
     <h3 class="facilities-article">Инструмент</h3>
-    <p class="facilities-subtitle">На все случаи</p>
-    <img src="img/icon-2.svg" width="75" height="61" alt="icon-instruments">
+    <a href="#" class="facilities-subtitle">На все случаи</a>
       </li>
-      <li class="facilities-item-vehicles">
+      <li class="facilities-item facilities-item-vehicles">
     <h3 class="facilities-article">Техника</h3>
-    <p class="facilities-subtitle">Для стройки</p> 
-    <img src="img/icon-3.svg" width="78" height="62" alt="icon-technique">
+    <a href="#" class="facilities-subtitle">Для стройки</a> 
+      </li>
+      <li class="facilities-item facilities-item-sale">
+    <h3 class="facilities-article">Скидка 50%</h3>
+    <a href="#" class="facilities-subtitle">На 350 товаров</a>
+      </li>
+      <li class="facilities-item facilities-item-delivery">
+    <h3 class="facilities-article">Доставка</h3>
+    <a href="#" class="facilities-subtitle">Бесплатно</a>
       </li>
       <li class="facilities-item-perforator">
         <figure>
@@ -91,20 +96,10 @@
           <figcaption class="facilities-perforator">
                 <h3 class="facilities-perforator-title">Перфораторы</h3>
                 <p class="facilities-perforator-subtitle">Настоящие мужские игрушки</p>
-                <a href="#" class="red-button">Открыть каталог</a>
+                <a href="#" class="red-button catalog-btn">Открыть каталог</a>
           </figcaption>
           </figure>
         </li>
-      <li class="facilities-item-sale">
-    <h3 class="facilities-article">Скидка 50%</h3>
-    <p class="facilities-subtitle">На 350 товаров</p>
-    <img src="img/icon-4.svg" width="59" height="72" alt="icon-sales">
-      </li>
-      <li class="facilities-item-delivery">
-    <h3 class="facilities-article">Доставка</h3>
-    <p class="facilities-subtitle">Бесплатно</p>
-    <img src="img/icon-5.svg" width="78" height="63" alt="icon-materials" class="facilities-icon">
-      </li>
 
     </ul>
     </div> 
@@ -113,7 +108,7 @@
   <section class="goods">
     <div  class="container">
     <h2 class="goods-manufactures-title">Популярные товары
-      <a href="#" class="red-button b-goods">Все популярные товары</a>
+      <a href="#" class="red-button goods-btn">Все популярные товары</a>
     </h2>
     <ul class="goods-list">
       <li class="goods-item">
@@ -122,10 +117,10 @@
           <h3 class="goods-description">Перфоратор BOSCH BFG 9000</h3> 
         </a>
           <div class="goods-old-price">32500 Р.</div>
-          <button type="button" class="goods-new-price">25500 Р.</button>
+          <div class="goods-new-price">25500 Р.</div>
       </li>
-      <li class="goods-item">
-        <img src="img/indПерфораторBOSCHBFG3000.png" class="goods-pic" alt="Tool_1.2" width="127" height="112"><img src="img/new.svg">
+      <li class="goods-item goods-item-new">
+        <img src="img/indПерфораторBOSCHBFG3000.png" class="goods-pic" alt="Tool_1.2" width="127" height="112">
         <a href="#" class="goods-link">
           <h3 class="goods-description">Перфоратор BOSCH BFG 3000</h3> 
         </a>
@@ -140,8 +135,8 @@
         <div class="goods-old-price">30500 Р.</div>
           <button type="button" class="goods-new-price">25500 Р.</button>
       </li>
-      <li class="goods-item">
-        <img src="img/indПерфораторBOSCHBFG2000.png" class="goods-pic" alt="Tool_1.4" width="127" height="112"><img src="img/new.svg">
+      <li class="goods-item goods-item-new">
+        <img src="img/indПерфораторBOSCHBFG2000.png" class="goods-pic" alt="Tool_1.4" width="127" height="112">
         <a href="#" class="goods-link">
           <h3 class="goods-description">Перфоратор BOSCH BFG 2000</h3>
         </a>
@@ -155,7 +150,7 @@
   <section class="manufactures">
     <div  class="container">
     <h2 class="goods-manufactures-title">Популярные производители
-    <a href="#" class="red-button">Все производители</a>
+    <a href="#" class="red-button manufactures-btn">Все производители</a>
     </h2>
     <ul class="manufactures-list">
       <li class="manufactures-item">
@@ -234,12 +229,12 @@
       <div class="services-delivery">
         <ul class="services-delivery-list">
           <li>
-            <div>
+            <div class="serveces-delivery-box">
               <h3 class="services-delivery-title">Доставка</h3>
               <p class="services-delivery-description">
               Мы с удовольствием доставим ваш товар прямо
               к вашему подъезду совершенно бесплатно!
-              Ведь мы неплохо заработаем,
+              Ведь мы неплохо заработаем,<br>
               поднимая его на ваш этаж!
               </p>
             </div>
@@ -262,21 +257,21 @@
         Огромный выбор товаров для ремонта и строительства
         не оставит равнодушными любителей
         сэкономить на гастарбайтерах. <br><br>
-        Мы можем доставить ваш товар в самые отдаленные точки России!
+        Мы можем доставить ваш товар в самые отдаленные точки России!<br>
         Техномарт работает со многими транспортными компаниями:
       </p>
       <div class="contacts-companies">
         <ul class="contacts-companies-list">
-          <li><img src="img/тире.svg"> Деловые линии</li>
+          <li><img src="img/тире.svg" > Деловые линии</li>
           <li><img src="img/тире.svg"> Авторейдинг</li>
           <li><img src="img/тире.svg"> ЖелДорЭкспедиция</li>
         </ul>
       </div>
 
-    <a href="#" class="red-button">Подробнее о компании</a>
+    <a href="#" class="red-button more-btn">Подробнее о компании</a>
     </section>
     <section class="contacts-right">
-
+<div  class="contacts-right">
       <h2 class="contacts-right-title">Контакты</h2>
       <p class="contacts-right-description">
         Вы можете забрать товар сами, заехав в наш офис:
@@ -285,6 +280,7 @@
         <img src="img/map.jpg" class="map-pic" alt="map" width="300" height="158">
       </a>
       <a href="#" class="contacts-link red-button">Заблудились? Напишите нам!</a>
+    </div>
     </section>
   </div>
   </div>
@@ -352,10 +348,12 @@
       </ul>
     </div>
     <div class="footer-bottom-contacts">
-      Обратная связь:
-      <a class="footer-bottom-contacts-mail" href="mailto:mail@htmlacademy.ru">mail@htmlacademy.ru</a>
-      Разработано -
-      <a class="footer-bottom-contacts-site" href="https://htmlacademy.ru">HTML Academy</a>
+      <div class="footer-bottom-contacts-mail">
+      Обратная связь:<br>
+      <a href="mailto:mail@htmlacademy.ru">mail@htmlacademy.ru</a></div>
+      <div class="footer-bottom-contacts-site">
+      Разработано -<br>
+      <a href="https://htmlacademy.ru">HTML Academy</a></div>
     </div>
   </div>
   </div>
