@@ -96,30 +96,47 @@ img{
     font-size: 18px;
     line-height: 24px;
     color: var(--white);
-
+    height: 42px;
 }
 .logo{
     background-image: url("img/Object.svg");
     background-size: 220px 47px;
 }
 .bookmark-link{
-    display: flex;
-    align-items: center;
     font-size: 18px;
     line-height: 24px;
+    position: relative;
+    top: 9px;
+}
+.bookmark-link::before{
+    content: "";
+    position: absolute;
+    width: 14px;
+    height: 16px;
+    background-image: url("../img/icon-bookmark (1).svg");
+    background-repeat: no-repeat;
+    background-position: 0 0;
+    opacity: 0.3;
+    left: -21px;
+    top: 2px;
 }
 .cart-link{
-    display: flex;
-    align-items: center;
     font-size: 18px;
     line-height: 24px;
+    position: relative;
+    top: 9px;
 }
-
-.icon-bookmark{
-    margin-right:9px;
-}
-.icon-cart{
-    margin-right:8px;
+.cart-link::before{
+    content: "";
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    background-image: url("../img/icon-cart\ \(1\).svg");
+    background-repeat: no-repeat;
+    background-position: 0 0;
+    opacity: 0.3;
+    left: -21px;
+    top: 3px;
 }
 .bookmark-link:focus,
 .cart-link:focus{
@@ -135,7 +152,7 @@ img{
     align-items: center;
     height:42px;
     text-align: center;
-    padding-left:19px;
+    padding-left:16px;
 }
 .order-link:hover{
     background-color: var(--green-hover);
@@ -153,15 +170,14 @@ img{
     padding: 0 10px;
     display: flex;
     flex-direction: row;
-    justify-content: center;
     padding-right:93px;
     align-content:center;
+
 }
 .header-description{
     margin-top:37.5px;
-    margin-right:93px;
-    display: flex;
-    align-self: flex-start;
+    margin-left: 30px;
+margin-right: 93px;
     width: 197px;
     justify-self: left;
     font-style: italic;
@@ -239,7 +255,6 @@ img{
     line-height: 24px;
     color: var(--white);
     background-color: var(--light-blue);
-    
 }
 .site-nav{
     width: 940px;
@@ -253,6 +268,7 @@ img{
     box-shadow: inset 0px -5px 0px var(--black);
     margin-bottom: 60px;
     justify-content: space-between;
+    margin-top:40px ;
 }
 .site-nav a{
     display: block;
