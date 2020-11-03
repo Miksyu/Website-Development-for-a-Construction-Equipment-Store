@@ -15,13 +15,11 @@
     <div class="header-top-content">
       <div class="logotip"><img src="img/logo-technomart (2).svg" class="logo1"></div>
     
-    <form action="https://echo.htmlacademy.ru/courses" method="post">
-      
-      <button type="submit">
-        <img src="img/icon-search (1).svg" class="loupe" alt="Лупа">
-      </button>
-      <input type="search" name="search" placeholder="Поиск:">
-    </form>
+      <form action="https://echo.htmlacademy.ru/courses" method="post" class="form-loupe">
+        <input type="search" name="search" placeholder="Поиск:" class="input-loupe">
+        <button type="submit"  class="button-loupe">
+        </button>
+      </form>
     <div class="user-nav">
     <a href="#" class="bookmark-link">
       Закладки: 0</a>
@@ -90,6 +88,7 @@
     <h3 class="facilities-article">Доставка</h3>
     <a href="#" class="facilities-subtitle">Бесплатно</a>
       </li>
+      
       <li class="facilities-item-perforator">
         <figure>
           <img src="img/man.jpg" width="620" height="266" alt="perforator-man" class="pic-perfomator">
@@ -100,6 +99,17 @@
           </figcaption>
           </figure>
         </li>
+
+        <li class="facilities-item-perforator visually-hidden">
+          <figure>
+            <img src="img/Layer99.png" width="620" height="266" alt="perforator-man" class="pic-perfomator">
+            <figcaption class="facilities-perforator">
+                  <h3 class="facilities-perforator-title">Дрели</h3>
+                  <p class="facilities-perforator-subtitle">Соседям на радость!</p>
+                  <a href="catalog.html" class="red-button catalog-btn">Открыть каталог</a>
+            </figcaption>
+            </figure>
+          </li>
 
     </ul>
     </div> 
@@ -199,13 +209,15 @@
 
   <section class="services">
     <div class="container">
-    <div class="services-content">
     <div class="services-top">
       <h2 class="services-title">Сервисы</h2>
       <p class="services-description">
         Хороший интернет-магазин отличается от плохого не только ценами!
         Мы стараемся изо всех сил, чтобы сделать ваши покупки приятными.
       </p>
+    </div>
+
+    <div class="services-bottom">
       <ul class="services-bottom-list">
         <li>
           <div class="services-bottom-item-delivery">
@@ -223,13 +235,11 @@
           </div>
         </li>
       </ul>
-    </div>
 
-    <div class="services-bottom">
+    
       <div class="services-delivery">
         <ul class="services-delivery-list">
-          <li>
-            <div class="serveces-delivery-box">
+          <li class="delivery-item">
               <h3 class="services-delivery-title">Доставка</h3>
               <p class="services-delivery-description">
               Мы с удовольствием доставим ваш товар прямо
@@ -237,12 +247,10 @@
               Ведь мы неплохо заработаем,<br>
               поднимая его на ваш этаж!
               </p>
-            </div>
           <img src="img/lorry.png" class="lorry-pic" alt="lorry" width="468" height="261">
           </li>
         </ul>
       </div>
-    </div>
   </div>
   </div>
   </section>
@@ -262,9 +270,9 @@
       </p>
       <div class="contacts-companies">
         <ul class="contacts-companies-list">
-          <li><img src="img/тире.svg" > Деловые линии</li>
-          <li><img src="img/тире.svg"> Авторейдинг</li>
-          <li><img src="img/тире.svg"> ЖелДорЭкспедиция</li>
+          <li><img src="img/тире.svg" class="tire"> Деловые линии</li>
+          <li><img src="img/тире.svg" class="tire"> Авторейдинг</li>
+          <li><img src="img/тире.svg" class="tire"> ЖелДорЭкспедиция</li>
         </ul>
       </div>
 
@@ -359,54 +367,24 @@
   </div>
 </footer>
 
-<section class="modal">
-  <h2>Регистрация</h2>
+<section class="modal visually-hidden">
   <form action="https://echo.htmlacademy.ru/courses" method="post">
-    <p>
-      <label class="visually-hidden" for="login">Ваш email:</label>
-      <input class="login-icon-user" id="login-login" type="email" name="login" placeholder="email@example.com">
-    </p>
-    <p>
-      <label class="visually-hidden" for="login-password">Придумайте пароль</label>
-      <input class="login-icon-password" id="login-password" type="password" name="password" placeholder="••••••••">
-    </p>
-  <input type="checkbox" checked> Подписаться на рассылку<br>
-  <input type="submit" value="Зарегистрироваться">
-</form>
-</section>
 
-<section class="modal">
-  <h2>Личный кабинет</h2>
-  <p>Введите, пожалуйста, свой логин и пароль</p>
-  <form class="login-form" action="https://echo.htmlacademy.ru" method="post">
-    <p>
-      <label class="visually-hidden" for="login-login">Логин</label>
-      <input class="login-icon-user" id="login-login" type="email" name="login" placeholder="email@example.com">
+    <p class="modal-descriprion">Ваше имя:
+      <label for="name" class="visually-hidden">Ваше имя</label>
+      <input class="name-user" id="name" type="text" placeholder="Имя Фамилия">
     </p>
-    <p>
-      <label class="visually-hidden" for="login-password">Пароль</label>
-      <input class="login-icon-password" id="login-password" type="password" name="password" placeholder="••••••••">
+    <p class="modal-descriprion">Ваш email:
+      <label for="login" class="visually-hidden">Ваш email:</label>
+      <input class="login-user" id="login" type="email" name="login" placeholder="email@example.com">
     </p>
-    <p class="login-help">
-      <label class="login-checkbox">
-        <input class="visually-hidden" type="checkbox" name="remember">
-        <span class="checkbox-indicator"></span>
-        Запомните меня
-      </label>
-      <a class="restore" href="#">Я забыл пароль!</a>
-    </p>
-    <button class="button" type="submit">Войти</button>
-  </form>
-  <button type="button">Закрыть</button>
-</section>
 
-<section class="modal modal-feedback">
-  <form action="https://echo.htmlacademy.ru/courses" method="post"></form>
-  <h2>Обратная связь</h2>
-  <p class="modal-feedback">Напишите свой отзыв</p>
-  <textarea rows="5" cols="20"></textarea><br>
-  <input type="submit" value="Отправить">
-  <button class="modal-close" type="button">Закрыть</button>
+  <p class="modal-descriprion">Текст письма</p>
+  <textarea>В свободной форме</textarea>
+  <div class="modal-button-submit">
+  <button class="button" type="submit">Отправить</button>
+  </div>
+  <button class="modal-close" type="button" aria-label="Закрыть"></button>
 </form>
 </section>
 
