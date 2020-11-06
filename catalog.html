@@ -47,9 +47,9 @@
     <div>
       <button type="submit" class="logged"><img src="img/icon-user.svg" class="logged-img logged-img-1" alt="иконка">Равшан Джамшутович
         <img src="img/icon-login.svg"  alt="иконка" class="logged-img logged-img-2"></button>
-      <p class="my-orders">
-        Мои заказы Личный кабинет
-      </p>
+      <div class="my-orders">
+        Мои заказы   Личный кабинет
+      </div>
     </div>
   </div>
   </div>
@@ -169,45 +169,62 @@
       <section class="sorting">
         <h2 class="sorting-title">Сортировка</h2>
         <ul class="sorting-list">
-          <li class="sorting-item"><a href="#">по цене</a></li>
-          <li class="sorting-item"><a href="#">по типу</a></li>
-          <li class="sorting-item"><a href="#">по функционалу</a></li>
+          <li class="sorting-item sorting-item-price checked"><a href="#">по цене</a></li>
+          <li class="sorting-item sorting-item-type"><a href="#">по типу</a></li>
+          <li class="sorting-item sorting-item-function"><a href="#">по функционалу</a></li>
         </ul>
       </section>
 
       <section>
         <h2 class="visually-hidden">Список перфораторов</h2>
         <ul class="perforators-list">
+
           <li class="perforators-item">
+            <div class="perforators-item-top">
             <img src="img/tool1.png" alt="Перфоратор BOSCH BFG 6000">
-            <a href="#">
+            </div>
+            <a href="#" class="perforators-item-link">
               <h3 class="goods-description">Перфоратор BOSCH BFG 6000</h3>
             </a>
-            <div class="goods-old-price">30500 Р.</div>
-            <button type="button" class="goods-new-price">25500 Р.</button>
+            <div class="perforators-item-price">
+            <p class="goods-old-price">30500 Р.</p>
+            <p class="goods-new-price">25500 Р.</p>
+          </div>
           </li>
+
           <li class="perforators-item">
+            <div class="perforators-item-top">
             <img src="img/tool2.png" alt="Перфоратор BOSCH BFG 6000">
-            <a href="#">
+            </div>
+            <a href="#" class="perforators-item-link">
               <h3 class="goods-description">Перфоратор BOSCH BFG 6000</h3>
             </a>
-            <div class="goods-old-price">30500 Р.</div>
-            <button type="button" class="goods-new-price">25500 Р.</button>
+            <div class="perforators-item-price">
+            <p class="goods-old-price">30500 Р.</p>
+            <p class="goods-new-price">25500 Р.</p>
+          </div>
           </li>
+
           <li class="perforators-item  goods-item-new goods-checked">
-            <img src="img/icon-cart.svg"  alt="иконка"><a href="#" class="button-buy">Купить</a>
+            <div class="perforators-item-top">
+            <img src="img/icon-cart.svg"  alt="иконка">
+            </div>
+            <a href="#" class="button-buy">Купить</a>
             <a href="#" class="button-bookmark">В закладки</a>
-            <a href="#">
+            <a href="#" class="perforators-item-link">
               <h3 class="goods-description">Перфоратор BOSCH BFG 6000</h3>
             </a>
-            <div class="perforators-item-price"></div>
-            <div class="goods-old-price">30500 Р.</div>
-            <button type="button" class="goods-new-price">25500 Р.</button>
+            <div class="perforators-item-price">
+            <p class="goods-old-price">30500 Р.</p>
+            <p class="goods-new-price">25500 Р.</p>
+            </div>
           </li>
 
           <li class="perforators-item  goods-item-new">
+            <div class="perforators-item-top">
             <img src="img/tool4.png" alt="Перфоратор BOSCH BFG 3000">
-            <a href="#">
+            </div>
+            <a href="#" class="perforators-item-link">
               <h3 class="goods-description">Перфоратор BOSCH BFG 3000</h3>
             </a>
             <div class="perforators-item-price">
@@ -217,8 +234,10 @@
           </li>
 
           <li class="perforators-item">
+            <div class="perforators-item-top">
             <img src="img/tool5.png" alt="Перфоратор BOSCH BFG 6000">
-            <a href="#">
+            </div>
+            <a href="#" class="perforators-item-link">
               <h3 class="goods-description">Перфоратор BOSCH BFG 6000</h3>
             </a>
             <div class="perforators-item-price">
@@ -226,9 +245,12 @@
             <p class="goods-new-price">25500 Р.</p>
             </div>
           </li>
+
           <li class="perforators-item  goods-item-new">
+            <div class="perforators-item-top">
             <img src="img/tool6.png" alt="Перфоратор BOSCH BFG 2000">
-            <a href="#">
+          </div>
+            <a href="#" class="perforators-item-link">
               <h3 class="goods-description">Перфоратор BOSCH BFG 2000</h3> 
             </a>
             <div class="perforators-item-price">
@@ -237,8 +259,12 @@
           </li>
 
           <li class="perforators-item  goods-item-new">
+            <div class="perforators-item-top">
             <img src="img/tool7.png" alt="Перфоратор BOSCH BFG 3000" class="">
-              <h3 class="goods-description">Перфоратор BOSCH BFG 3000</h3>
+            </div>
+            <a href="#" class="perforators-item-link"> 
+            <h3 class="goods-description">Перфоратор BOSCH BFG 3000</h3>
+            </a>
             <div class="perforators-item-price">
             <p class="goods-old-price">22500 Р.</p>
             <p class="goods-new-price">15500 Р.</p>
@@ -246,8 +272,10 @@
           </li>
 
           <li class="perforators-item">
+            <div class="perforators-item-top">
             <img src="img/tool8.png" alt="Перфоратор BOSCH BFG 6000">
-            <a href="#">
+            </div>
+            <a href="#"  class="perforators-item-link">
               <h3 class="goods-description">Перфоратор BOSCH BFG 6000</h3>
             </a>
             <div class="perforators-item-price">
@@ -257,8 +285,10 @@
           </li>
 
           <li class="perforators-item  goods-item-new">
+            <div class="perforators-item-top">
             <img src="img/tool9.png" alt="Перфоратор BOSCH BFG 2000">
-            <a href="#">
+            </div>
+            <a href="#"  class="perforators-item-link">
               <h3 class="goods-description">Перфоратор BOSCH BFG 2000</h3>
             </a>
             <div class="perforators-item-price">
@@ -371,5 +401,25 @@
     </div>
     </div>
 </footer>
+
+<section class="modal-catalog visually-hidden">
+  <h2 class="visually-hidden">Модальное окно</h2>
+  <form action="https://echo.htmlacademy.ru/courses" method="post">
+
+    <img src="img/icon-mark.svg" alt="иконка" class="icon-mark">
+    <p class="modal-good">
+      Товар добавлен в корзину!
+    </p>
+<div class="catalog-bottom">
+  <div class="catalog-button-order">
+  <button class="button" type="submit">Оформить заказ</button>
+  </div>
+  <div class="catalog-button-continue">
+    <button class="button" type="submit">Продолжить покупки</button>
+    </div>
+</div>
+  <button class="modal-close" type="button" aria-label="Закрыть"></button>
+</form>
+</section>
 </body>
 </html>

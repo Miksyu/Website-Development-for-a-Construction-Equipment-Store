@@ -121,37 +121,58 @@
       <a href="#" class="red-button goods-btn">Все популярные товары</a>
     </h2>
     <ul class="goods-list">
+
       <li class="goods-item">
+        <div class="goods-item-top">
         <img src="img/indПерфораторBOSCHBFG9000.png" class="goods-pic" alt="BOSCH BFG 9000" width="184" height="164">
-        <a href="#" class="goods-link">
+      </div>
+        <a href="#" class="perforators-item-link">
           <h3 class="goods-description">Перфоратор BOSCH BFG 9000</h3> 
         </a>
-          <div class="goods-old-price">32500 Р.</div>
-          <div class="goods-new-price">25500 Р.</div>
+        <div class="perforators-item-price">
+          <p class="goods-old-price">32500 Р.</p>
+          <p class="goods-new-price">25500 Р.</p>
+        </div>
       </li>
+
       <li class="goods-item goods-item-new">
+        <div class="goods-item-top">
         <img src="img/indПерфораторBOSCHBFG3000.png" class="goods-pic" alt="BOSCH BFG 3000" width="127" height="112">
-        <a href="#" class="goods-link">
+      </div>
+        <a href="#" class="perforators-item-link">
           <h3 class="goods-description">Перфоратор BOSCH BFG 3000</h3> 
         </a>
-        <div class="goods-old-price">22500 Р.</div>
-          <button type="button" class="goods-new-price">15500 Р.</button>
+        <div class="perforators-item-price">
+        <p class="goods-old-price">22500 Р.</p>
+          <p  class="goods-new-price">15500 Р.</p>
+        </div>
       </li>
+
       <li class="goods-item">
-        <img src="img/indПерфораторBOSCHBFG6000.png" class="goods-pic" alt="BOSCH BFG 6000" width="144" height="128">
-        <a href="#" class="goods-link">
+        <div class="goods-item-top">
+        <img src="img/tool5.png" alt="Перфоратор BOSCH BFG 6000">
+        </div>
+        <a href="#" class="perforators-item-link">
           <h3 class="goods-description">Перфоратор BOSCH BFG 6000</h3>
         </a>
-        <div class="goods-old-price">30500 Р.</div>
-          <button type="button" class="goods-new-price">25500 Р.</button>
+        <div class="perforators-item-price">
+        <p class="goods-old-price">30500 Р.</p>
+        <p class="goods-new-price">25500 Р.</p>
+        </div>
       </li>
+
       <li class="goods-item goods-item-new">
+        <div class="goods-item-top">
         <img src="img/indПерфораторBOSCHBFG2000.png" class="goods-pic" alt="BOSCH BFG 2000" width="127" height="112">
-        <a href="#" class="goods-link">
+      </div>
+        <a href="#" class="perforators-item-link">
           <h3 class="goods-description">Перфоратор BOSCH BFG 2000</h3>
         </a>
-        <button type="button" class="goods-new-price">12500 Р.</button>
+        <div class="perforators-item-price">
+        <p class="goods-new-price">12500 Р.</p>
+      </div>
       </li>
+
       </ul>
     </div>
   </section>
@@ -247,7 +268,31 @@
               Ведь мы неплохо заработаем,<br>
               поднимая его на ваш этаж!
               </p>
-          <img src="img/lorry.png" class="lorry-pic" alt="lorry" width="468" height="261">
+          </li>
+        </ul>
+      </div>
+      <div class="services-guarantee visually-hidden">
+        <ul class="services-delivery-list">
+          <li class="guarantee-item">
+              <h3 class="services-delivery-title">Гарантия</h3>
+              <p class="services-guarantee-description">
+                Если купленный у нас товар поломается или заискрит,
+                <br>а также в случае пожара, спровоцированного его 
+                <br>возгоранием,  вы всегда можете быть уверены в нашей
+                <br> гарантии. Мы обменяем сгоревший товар на новый.
+                <br> Дом уж восстановите как-нибудь сами.
+              </p>
+          </li>
+        </ul>
+      </div>
+      <div class="services-credit visually-hidden">
+        <ul class="services-delivery-list">
+          <li class="credit-item">
+              <h3 class="services-delivery-title">Кредит</h3>
+              <p class="services-credit-description">
+                Залезть в долговую яму стало проще!<br> Кредитные консультанты придут вам на помощь.
+              </p>
+              <a href="#" class="red-button request-btn">Отправить заявку</a>
           </li>
         </ul>
       </div>
@@ -371,17 +416,21 @@
   <h2 class="visually-hidden">Модальное окно</h2>
   <form action="https://echo.htmlacademy.ru/courses" method="post">
 
-    <p class="modal-descriprion">Ваше имя:
-      <label for="name" class="visually-hidden">Ваше имя</label>
+    <div class="modal-top">
+    <p class="modal-descriprion modal-name">Ваше имя:
+      <label for="name" class="your-name visually-hidden">Ваше имя</label>
       <input class="name-user" id="name" type="text" placeholder="Имя Фамилия">
     </p>
-    <p class="modal-descriprion">Ваш email:
+    <p class="modal-descriprion modal-email">Ваш email:
       <label for="login" class="visually-hidden">Ваш email:</label>
       <input class="login-user" id="login" type="email" name="login" placeholder="email@example.com">
     </p>
+  </div>
 
-  <p class="modal-descriprion">Текст письма</p>
-  <textarea>В свободной форме</textarea>
+  <div class="modal-bottom">
+  <p class="modal-descriprion modal-text">Текст письма</p>
+  <textarea class="free-form">В свободной форме</textarea>
+  </div>
   <div class="modal-button-submit">
   <button class="button" type="submit">Отправить</button>
   </div>
