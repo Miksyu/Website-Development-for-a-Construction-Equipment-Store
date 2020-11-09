@@ -334,9 +334,9 @@
           </p>
           <div class="contacts-companies">
             <ul class="contacts-companies-list">
-              <li> Деловые линии</li>
-              <li> Авторейдинг</li>
-              <li> ЖелДорЭкспедиция</li>
+              <li class="contacts-companies-item"> Деловые линии</li>
+              <li class="contacts-companies-item"> Авторейдинг</li>
+              <li class="contacts-companies-item"> ЖелДорЭкспедиция</li>
             </ul>
           </div>
 
@@ -437,19 +437,23 @@
     <form action="https://echo.htmlacademy.ru/courses" method="post">
 
       <div class="modal-top">
-        <p class="modal-descriprion modal-name">Ваше имя:
-          <label for="name" class="your-name visually-hidden">Ваше имя</label>
-          <input class="name-user" id="name" type="text" placeholder="Имя Фамилия">
+        <p>
+          <label for="name" class="your-name">Ваше имя:</label>
+          <input id="name" class="name-user" type="text" placeholder="Имя Фамилия">
         </p>
-        <p class="modal-descriprion modal-email">Ваш email:
-          <label for="login" class="visually-hidden">Ваш email:</label>
-          <input class="login-user" id="login" type="email" name="login" placeholder="email@example.com">
+        <p>
+          <label for="login">Ваш e-mail:</label>
+          <input id="login" class="login-user" type="email" name="login" placeholder="email@example.com">
         </p>
       </div>
 
       <div class="modal-bottom">
-        <p class="modal-descriprion modal-text">Текст письма</p>
-        <textarea class="free-form">В свободной форме</textarea>
+        <p>
+          <label for="text-letter" class="modal-text">Текст письма:</label>
+        </p>
+        <p>
+          <textarea id="text-letter">В свободной форме</textarea>
+        </p>
       </div>
       <div class="modal-button-submit">
         <button class="button" type="submit">Отправить</button>
