@@ -40,7 +40,7 @@
 }
 
 body{
-    min-width: 1200px;
+    min-width: 960px;
     margin: 0;
     padding: 0;
     font-family: "Cuprum", "Arial", sans-serif;
@@ -55,6 +55,11 @@ a{
 img{
     max-width: 100%;
     height: auto;
+}
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0; 
 }
                             /* GRID */
 .page {
@@ -184,7 +189,7 @@ img{
     padding-right:93px;
     align-content:center;
     justify-content: space-between;
-
+    box-sizing: border-box;
 }
 .header-description{
     margin-top:37.5px;
@@ -327,6 +332,7 @@ img{
     width: 940px;
     margin: 0 auto;
     padding: 0 10px;
+    box-sizing: border-box;
 }
 .facilities-list{
     list-style:none;
@@ -407,7 +413,6 @@ img{
 .facilities-item-perforator figure{
     margin:0;
     position:relative;
-
 }
 .facilities-item-perforator{
     margin: 0;
@@ -415,9 +420,6 @@ img{
     background-color: var(--white);
     grid-column:1/3;
     grid-row:2/4;
-}
-.facilities-perforator{
-
 }
 .facilities-perforator-title{
     font-weight: bold;
@@ -442,6 +444,20 @@ img{
     justify-content: flex-end;
     position: absolute;
     float:right;
+}
+.top-slider-list{
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+}
+.top-slider{
+    position: relative;
+}
+.top-slider-bullet{
+    position: absolute;
+}
+.top-slider-arrow{
+    position: absolute;
 }
 .pic-perfomator{
     position: absolute;
@@ -993,6 +1009,7 @@ color: var(--dark-blue);
     margin: 0 auto;
     margin-top:21px;
     padding: 0 10px;
+    box-sizing: border-box;
 }
 .directories-list-item{
     position: relative;
@@ -1038,6 +1055,7 @@ color: var(--dark-blue);
     width: 940px;
     margin: 0 auto;
     padding: 0 10px;
+    box-sizing: border-box;
 }
 .left-col{
     flex-basis: 220px;
@@ -1059,6 +1077,9 @@ color: var(--dark-blue);
 }
 .sorting-arrow{
     display: block;
+    margin-top:7px;
+    margin-left: 10px;
+    padding: 0;
     width: 0;
     height: 0;
     border-left: 5px solid transparent;
@@ -1281,6 +1302,7 @@ opacity: 1;
     padding: 0 10px;
     display: grid;
     grid-template-columns: 1fr;
+    box-sizing: border-box;
 }
 .perforators-title{
     font-size: 30px;
@@ -1439,6 +1461,7 @@ opacity: 1;
     width: 940px;
     margin: 0 auto;
     padding: 0 10px;
+    box-sizing: border-box;
 }
 .footer-top-navigation{
     display: flex;
