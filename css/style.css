@@ -147,6 +147,9 @@ input[type="number"]::-webkit-inner-spin-button {
     top: 12px;
     left: 17px;
 }
+.bookmark-linked:hover::before{
+    opacity: 1;
+}
 .cart-link{
     font-size: 18px;
     line-height: 24px;
@@ -711,12 +714,12 @@ input[type="number"]::-webkit-inner-spin-button {
     margin-right: 19px;
     width: 160px;
     justify-content: space-around;
-    margin-bottom: -16px;
+    margin-bottom: -52px;
 }
 .perforators-item-link{
     display: flex;
     flex-grow: 1;
-    margin-top: 17px;
+    margin-top: -8px;
 }
 .perforators-item-link-1{
     display: flex;
@@ -727,7 +730,7 @@ input[type="number"]::-webkit-inner-spin-button {
     height: 149px;
 }
 .perforators-item-price{
-    padding-top: 10px;
+    margin-top: 20px;
 }
 .goods-item-top{
     height: 150px;
@@ -773,6 +776,7 @@ input[type="number"]::-webkit-inner-spin-button {
     text-decoration-line: line-through;
     text-transform: uppercase;
     color: var(--grey);
+    margin-top: 17px;
 }
 .goods-new-price{
     display: flex;
@@ -1226,10 +1230,10 @@ color: var(--dark-blue);
     background-color: var(--dark-blue);
     border-radius:50%;
 }
-.my-orders:hover::before{
+.my-orders-1:hover::before{
     background-color: var(--red);
 }
-.my-orders:focus::before{
+.my-orders-1:focus::before{
     background-color: var(--grey-one);
 }
 .directories-list{
