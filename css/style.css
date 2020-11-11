@@ -112,7 +112,7 @@ input[type="number"]::-webkit-inner-spin-button {
     font-size: 18px;
     line-height: 24px;
     position: relative;
-    padding: 9px 46px;
+    padding: 11px 45px 9px;
     margin-right: 0;
 }
 .bookmark-link::before{
@@ -124,8 +124,8 @@ input[type="number"]::-webkit-inner-spin-button {
     background-repeat: no-repeat;
     background-position: 0 0;
     opacity: 0.3;
-    top: 12px;
-    left: 25px;
+    top: 14px;
+    left: 24px;
 }
 .bookmark-linked{
     display: flex;
@@ -152,7 +152,7 @@ input[type="number"]::-webkit-inner-spin-button {
     line-height: 24px;
     position: relative;
     text-align: center;
-    padding: 9px 28px;
+    padding: 10px 29px 9px;
 }
 .cart-link::before{
     content: "";
@@ -163,8 +163,8 @@ input[type="number"]::-webkit-inner-spin-button {
     background-repeat: no-repeat;
     background-position: 0 0;
     opacity: 0.3;
-    left: 4px;
-    top: 12px;
+    left: 7px;
+    top: 13px;
 }
 .bookmark-link:hover::before,
 .cart-link:hover::before{
@@ -212,7 +212,7 @@ input[type="number"]::-webkit-inner-spin-button {
 }
 .header-description{
     margin-top: 44px;
-    margin-left: 32px;
+    margin-left: 31px;
     width: 197px;
     justify-self: left;
     font-style: italic;
@@ -285,7 +285,7 @@ input[type="number"]::-webkit-inner-spin-button {
     color: var(--dark-blue);
     text-align: center;
     margin-top: 2px;
-    margin-right: 89px;
+    margin-right: 91px;
 }
 .header-middle-adress-catalog{
     align-items: center;
