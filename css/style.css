@@ -724,7 +724,10 @@ input[type="number"]::-webkit-inner-spin-button {
 .perforators-item-link-1{
     display: flex;
     flex-grow: 1;
-    margin-top: 23px;
+    margin-top: 27px;
+}
+.perforators-item-top-1{
+    margin-top: 7px;
 }
 .perforators-item-top{
     height: 149px;
