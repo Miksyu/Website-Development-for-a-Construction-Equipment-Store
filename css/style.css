@@ -1616,6 +1616,10 @@ opacity: 1;
     padding: 10px;
     height: 317px;
 }
+.perforators-item:hover{
+    box-shadow: 0 0 10px var(--light-grey), 0 0 10px var(--light-grey);
+    box-sizing: border-box;
+}
 .goods-checked{
     box-shadow: 0 0 10px var(--light-grey), 0 0 10px var(--light-grey);
     box-sizing: border-box;
