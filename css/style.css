@@ -1501,6 +1501,14 @@ opacity: 1;
     text-transform: uppercase;
     padding-top: 23px;
 }
+.filter-list-item-2 label{
+    font-family: "PT Sans", "Arial", sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 15px;
+    line-height: 19px;
+}
+
 .filter-option {
     margin-bottom: 19px;
     padding-left: 42px;
