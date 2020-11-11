@@ -240,6 +240,17 @@ input[type="number"]::-webkit-inner-spin-button {
     padding-top: 3px;
     padding-left: 27px;
 }
+.header-middle-tel::before{
+    content: "";
+    position: absolute;
+    width: 19px;
+    height: 19px;
+    background-image: url("../img/icon-phone.svg");
+    background-repeat: no-repeat;
+    background-position: 0 0;
+    top: 8px;
+    left: 34px;
+}
 .header-middle-tel-catalog{
     position: relative;
     font-weight: bold;
@@ -292,6 +303,13 @@ input[type="number"]::-webkit-inner-spin-button {
     display:flex;
     gap: 10px;
 }
+.user-menu button{
+    font-family: "Cuprum", "Arial", sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 21px;
+    line-height: 21px;
+}
 .login{
     height:45px;
     font-size: 21px;
@@ -310,7 +328,9 @@ input[type="number"]::-webkit-inner-spin-button {
     width:150px;
 }
 .icon-login{
-    margin-right:6px;
+    margin-right: 10px;
+    padding-left: -54px;
+    margin-left: -9px;
 }
 .login:hover{
     color: var(--red);
@@ -653,6 +673,7 @@ input[type="number"]::-webkit-inner-spin-button {
     column-gap: 20px;
     margin: 0;
     padding: 0;
+    margin-top: -6px;
 }
 .goods-item{
     display:flex;
@@ -695,7 +716,7 @@ input[type="number"]::-webkit-inner-spin-button {
 .perforators-item-link{
     display: flex;
     flex-grow: 1;
-    margin-top: 2px;
+    margin-top: 17px;
 }
 .perforators-item-link-1{
     display: flex;
@@ -703,10 +724,45 @@ input[type="number"]::-webkit-inner-spin-button {
     margin-top: 23px;
 }
 .perforators-item-top{
-    height: 128px;
+    height: 149px;
+}
+.perforators-item-price{
+    padding-top: 10px;
 }
 .goods-item-top{
     height: 150px;
+}
+.perforators-old-price{
+    text-align: center;
+    font-family: "PT Sans", "Arial", sans-serif;
+    font-weight: 700;
+    font-size: 17px;
+    line-height: 18px;
+    text-decoration-line: line-through;
+    text-transform: uppercase;
+    color: var(--grey);
+}
+.perforators-new-price{
+    display: flex;
+    width:140px;
+    height: 40px;
+    justify-content: center;
+    align-items: center;
+    align-self: center;
+    text-transform: uppercase;
+    font-family: "PT Sans", "Arial", sans-serif;
+    font-size: 17px;
+    text-align: center;
+    line-height: 18px;
+    color: var(--white);
+    border: medium none;
+    background-image: url("../img/red-button.svg");
+    background-repeat: no-repeat;
+    background-size: auto;
+    background-color: transparent;
+    background-position: right center;
+    margin-top: -7px;
+    padding-left: 14px;
 }
 .goods-old-price{
     text-align: center;
@@ -774,7 +830,8 @@ input[type="number"]::-webkit-inner-spin-button {
 .services{
     background-color: var(--light-blue);
     margin-top:70px;
-    margin-bottom:70px;
+    margin-bottom: 47px;
+
 }
 .services-content{
     display: flex;
@@ -936,7 +993,7 @@ input[type="number"]::-webkit-inner-spin-button {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap:179px;
-    padding-bottom: 70px;
+    padding-bottom: 69px;
 }
 .contacts-left-description{
     font-family: "PT Sans", "Arial", sans-serif;
@@ -955,7 +1012,7 @@ input[type="number"]::-webkit-inner-spin-button {
     color: var(--total-black);
     width: 440px;
     margin: 0;
-    margin-top: 30px;
+    margin-top: 25px;
     margin-bottom: 1px;
 }
 .contacts-companies{
@@ -964,8 +1021,17 @@ input[type="number"]::-webkit-inner-spin-button {
     color: var(--total-black);
     position: relative;
 }
+.contacts-companies-item-1{
+    padding: 0px 0 0px 8px;
+}
+.contacts-companies-item-2{
+    padding: 12px 7px;
+}
+.contacts-companies-item-3{
+    padding: 0px 0 0px 8px;
+}
 .red-line{
-    transform: translate(0px, -5px);
+    transform: translate(-8px, -5px);
     margin-right: 5px;
 }
 .contacts-companies-list{
@@ -980,7 +1046,7 @@ input[type="number"]::-webkit-inner-spin-button {
 .contacts-link{
     display: block;
     padding: 11px 61px;
-    margin-top:25px;
+    margin-top:21px;
 }
 .contacts-right-title{
     font-size: 30px;
@@ -994,6 +1060,7 @@ input[type="number"]::-webkit-inner-spin-button {
     line-height: 24px;
     color: var(--total-black);
     width:180px;
+    padding-bottom: 18px;
 }
                                                                                                          /* CATALOG */
 .cart-linked{
@@ -1241,7 +1308,7 @@ color: var(--dark-blue);
 }
 .sorting-arrow{
     display: block;
-    margin-top: 5px;
+    margin-top: 8px;
     padding: 0;
     width: 0;
     height: 0;
@@ -1253,8 +1320,8 @@ color: var(--dark-blue);
 }
 .sorting-arrow-up{
     border-bottom: 10px solid var(--red);
-    margin-left: 26px;
-    margin-right: 24px;
+    margin-left: 47px;
+    margin-right: 21px;
 }
 .sorting-arrow-down{
     border-bottom: 10px solid var(--grey);
@@ -1266,8 +1333,8 @@ color: var(--dark-blue);
     flex-direction: row;
     justify-content: space-between;
     margin: 0;
-    padding-top: 10px;
-    padding-bottom: 10px;
+    padding-top: 5px;
+    padding-left: 21px;
 }
 .sorting-item{
     display: flex;
@@ -1539,7 +1606,7 @@ opacity: 1;
     border: 1px solid var(--light-grey);
     box-sizing: border-box;
     padding: 10px;
-    height: 318px;
+    height: 317px;
 }
 .goods-checked{
     box-shadow: 0 0 10px var(--light-grey), 0 0 10px var(--light-grey);
@@ -1607,7 +1674,7 @@ opacity: 1;
     font-size: 30px;
     line-height: 30px;
     text-transform: uppercase;
-    padding-top: 64px;
+    padding-top: 100px;
 }
 .two-words-about-perforators-description{
     font-family: "PT Sans", "Arial", sans-serif;
@@ -1624,11 +1691,17 @@ opacity: 1;
     margin-top: 48px;
 }
 .number-pages-list{
+    font-family: "PT Sans", "Arial", sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 13px;
+    line-height: 18px;
     list-style: none;
     display: flex;
     flex-wrap: wrap;
     padding: 0;
     margin: 0;
+    text-transform: uppercase;
 }
 .number-pages-list a{
     display: block;
@@ -1643,7 +1716,8 @@ opacity: 1;
     background-color: var(--white);
 }
 .number-pages-item:last-child{
-    margin-right: 0;
+    text-align: center;
+    width: 137px;
 }
 .number-pages-item a:focus{
     border: 1px solid var(--red);
@@ -1824,7 +1898,6 @@ opacity: 1;
     color: var(--red);
 }
 
-
                                             /* Modal login */
 .modal{
     position: fixed;
@@ -1862,6 +1935,11 @@ opacity: 1;
     left: 110px;
 }
 .catalog-bottom{
+    font-family: Cuprum;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 18px;
     display: flex;
     align-items: center;
     justify-content: center;
