@@ -41,9 +41,9 @@
         </p>
         <div class="header-middle-contacts">
           <div class="header-middle-tel">
-            <a href="tel:+78125550555">+7 (812) 555-05-55</a>
+            <a href="tel:+78125550555">+7 (831) 555-05-55</a>
           </div>
-          <p class="header-middle-adress">г. Санкт-Петербург, ул. Б. Конюшенная, д. 19/8
+          <p class="header-middle-adress">г. Нижний Новгород, ул. Б. Покровская, д. 19/8
           </p>
         </div>
         <div class="user-menu">
@@ -123,8 +123,8 @@
                 <button type="button" class="top-slider-arrow top-slider-arrow-next"></button>
               </div>
               <div class="top-slider-bullets">
-                <button type="button" class="top-slider-bullet top-slider-bullet-active"></button>
                 <button type="button" class="top-slider-bullet"></button>
+                <button type="button" class="top-slider-bullet top-slider-bullet-active"></button>
               </div>
             </div>
           </li>
@@ -166,7 +166,7 @@
             </div>
           </li>
 
-          <li class="goods-item">
+          <li class="goods-item goods-item-new">
             <div class="goods-item-top">
               <img src="img/tool5.png" alt="Перфоратор BOSCH BFG 6000" width="144" height="128">
             </div>
@@ -179,7 +179,7 @@
             </div>
           </li>
 
-          <li class="goods-item goods-item-new">
+          <li class="goods-item">
             <div class="goods-item-top">
               <img src="img/indboschbfg2000.png" class="goods-pic" alt="BOSCH BFG 2000" width="127" height="112">
             </div>
@@ -353,7 +353,7 @@
             </p>
             <a href="https://www.google.ru/maps/place/%D0%91%D0%BE%D0%BB%D1%8C%D1%88%D0%B0%D1%8F+%D0%9A%D0%BE%D0%BD%D1%8E%D1%88%D0%B5%D0%BD%D0%BD%D0%B0%D1%8F+%D1%83%D0%BB.,+19,+%D0%A1%D0%B0%D0%BD%D0%BA%D1%82-%D0%9F%D0%B5%D1%82%D0%B5%D1%80%D0%B1%D1%83%D1%80%D0%B3,+191186/@59.9387942,30.3208946,17z/data=!3m1!4b1!4m5!3m4!1s0x4696310fca5ba729:0xea9c53d4493c879f!8m2!3d59.9387942!4d30.3230833"
               class="contacts-map-link" target="new">
-              <img src="img/map.jpg" class="map-pic" alt="map" width="300" height="158">
+              <img src="img/map-nn.png" class="map-pic" alt="map" width="300" height="158">
             </a>
             <a href="#" class="contacts-link red-button">Заблудились? Напишите нам!</a>
           </div>
@@ -382,8 +382,8 @@
         </nav>
       </div>
       <div class="footer-middle">
-        <div class="footer-middle-contacts">г. Санкт-Петербург, ул. Б. Конюшенная, д. 19/8<br>
-          <a class="footer-middle-contacts-tel" href="tel:+78125550555">+7 (812) 555-05-55</a>
+        <div class="footer-middle-contacts">г. Нижний Новгород, ул. Б. Покровская, д. 19/8<br>
+          <a class="footer-middle-contacts-tel" href="tel:+78125550555">+7 (831) 555-05-55</a>
         </div>
         <nav class="footer-middle-navigation">
           <ul class="footer-middle-navigation-list">
@@ -426,16 +426,16 @@
         <div class="footer-bottom-contacts">
           <div class="footer-bottom-contacts-mail">
             Обратная связь:<br>
-            <a href="mailto:mail@htmlacademy.ru">mail@htmlacademy.ru</a></div>
+            <a href="mailto:technomart@gmail.com">technomart@gmail.com</a></div>
           <div class="footer-bottom-contacts-site">
             Разработано -<br>
-            <a href="https://htmlacademy.ru/intensive/htmlcss">htmlacademy.ru</a></div>
+            <a href="https://htmlacademy.ru/intensive/htmlcss">miksyu</a></div>
         </div>
       </div>
     </div>
   </footer>
 
-  <section class="modal visually-hidden">
+  <section class="modal modal-feedback visually-hidden">
     <h2 class="visually-hidden">Модальное окно</h2>
     <form action="https://echo.htmlacademy.ru/courses" method="post">
 
@@ -465,6 +465,59 @@
     </form>
   </section>
 
+  <section class="modal modal-login visually-hidden">
+    <h2 class="visually-hidden">Модальное окно</h2>
+    <form action="https://echo.htmlacademy.ru/courses" method="post">
+
+      <div class="modal-top">
+        <p>
+          <label for="login" class="your-name">Ваш e-mail:</label>
+          <input id="login" class="login-user" type="email" name="login" placeholder="email@example.com">
+        </p>
+        <p>
+          <label for="password">Ваш пароль:</label>
+          <input id="password" class="name-user" type="password" placeholder="••••••••">
+        </p>
+      </div>
+
+      <div class="modal-button-submit">
+        <button class="button" type="submit">Войти</button>
+      </div>
+      <button class="modal-close close-1" type="button" aria-label="Закрыть"></button>
+    </form>
+  </section>
+
+  <section class="modal modal-reg visually-hidden">
+    <h2 class="visually-hidden">Модальное окно</h2>
+    <form action="https://echo.htmlacademy.ru/courses" method="post">
+
+      <div class="modal-top">
+        <p>
+          <label for="name" class="your-name">Как к вам можно обращаться?</label>
+          <input id="name" class="name-user" type="text" placeholder="Имя Фамилия">
+        </p>
+        <p>
+          <label for="login" class="your-name">Ваш e-mail:</label>
+          <input id="login" class="login-user" type="email" name="login" placeholder="email@example.com">
+        </p>
+        <p>
+          <label for="password">Придумайте пароль:</label>
+          <input id="password" class="name-user" type="password" placeholder="••••••••">
+        </p>
+        <p>
+          <label for="password">Повторите пароль:</label>
+          <input id="password" class="name-user" type="password" placeholder="••••••••">
+        </p>
+      </div>
+
+      <div class="modal-button-submit">
+        <button class="button" type="submit">Зарегистрироваться</button>
+      </div>
+      <button class="modal-close close-2" type="button" aria-label="Закрыть"></button>
+    </form>
+  </section>
+
+<script src="js/script.js"></script>
 </body>
 
 </html>
