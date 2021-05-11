@@ -888,10 +888,12 @@ input[type="number"]::-webkit-inner-spin-button {
     font-weight: bold;
     font-size: 21px;
     line-height: 30px;
-    color: var(--dark-blue);
-    background-color: var(--white);
+    color: var(--white);
+    background-color: var(--dark-blue);
+    box-shadow: 0px 1px 0px var(--black), inset 0px 1px 0px var(--light-black);
     padding: 13.5px 139px 17.5px 22px;
 }
+
 .services-bottom-item-guarantee{
     font-weight: bold;
     font-size: 21px;
@@ -909,6 +911,10 @@ input[type="number"]::-webkit-inner-spin-button {
     background-color: var(--dark-blue);
     box-shadow: 0px 1px 0px var(--black), inset 0px 1px 0px var(--light-black);
     padding: 13.5px 157px 17.5px 22px;
+}
+.white-color{
+  color: var(--dark-blue);
+  background-color: var(--white);
 }
 .services-delivery-list{
     list-style:none;
@@ -2143,4 +2149,30 @@ opacity: 1;
 }
 .modal-close::after {
     transform: rotate(-45deg);
+}
+.modal-close2 {
+  position: absolute;
+  top: 0;
+  right: 5px;
+  width: 21px;
+  height: 21px;
+  background-color: transparent;
+  border: 0;
+  cursor: pointer;
+}
+.modal-close2::before,
+.modal-close2::after {
+  content: "";
+  position: absolute;
+  top: 10px;
+  left: 2px;
+  width: 19px;
+  height: 3px;
+  background-color: var(--red);
+}
+.modal-close2::before {
+  transform: rotate(45deg);
+}
+.modal-close2::after {
+  transform: rotate(-45deg);
 }
