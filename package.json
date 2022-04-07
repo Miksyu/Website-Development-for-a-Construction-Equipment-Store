@@ -1,0 +1,28 @@
+{
+  "name": "1532607-technomart-29",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index",
+    "dev": "nodemon index"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Miksyu/Website-Development-for-a-Construction-Equipment-Store.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Miksyu/Website-Development-for-a-Construction-Equipment-Store/issues"
+  },
+  "homepage": "https://github.com/Miksyu/Website-Development-for-a-Construction-Equipment-Store#readme",
+  "dependencies": {
+    "express": "^4.17.3",
+    "express-handlebars": "^6.0.4",
+    "mongoose": "^6.2.10"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  }
+}
