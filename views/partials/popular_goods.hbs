@@ -1,0 +1,33 @@
+<section class="goods">
+  <div class="container">
+    <h2 class="goods-manufactures-title">Популярные товары
+      <a href="#" class="red-button goods-btn">Все популярные товары</a>
+    </h2>
+    <ul class="goods-list">
+
+
+      {{#if popularGoods.length}}
+        {{#each popularGoods}}
+          <li class="goods-item">
+            <div class="goods-item-top">
+              <img src="img/{{img}}" class="goods-pic" alt="BOSCH BFG 9000" width="144" height="128">
+            </div>
+            <a href="#" class="perforators-item-link">
+              <h3 class="goods-description">{{name}}</h3>
+            </a>
+            <div class="perforators-item-price">
+              {{#if new_price}}
+              <p class="goods-old-price">{{old_price}} Р.</p>
+                <p class="goods-new-price">{{new_price}} Р.</p>
+              {{else}}
+                <p class="goods-new-price">{{old_price}} Р.</p>
+              {{/if}}
+
+            </div>
+          </li>
+        {{/each}}
+      {{/if}}
+
+    </ul>
+  </div>
+</section>

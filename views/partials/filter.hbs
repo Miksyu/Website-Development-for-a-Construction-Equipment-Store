@@ -1,0 +1,65 @@
+<div class="left-col">
+  <aside class="filter">
+    <h2 class="filter-title">Фильтр:</h2>
+    <form method="get" action="/catalog">
+      <fieldset class="filter-item">
+        <legend class="filter-price">Цена:</legend>
+        <div class="range-filter">
+          <div class="range-controls">
+            <div class="slider-container">
+              <input type="range" min="0" max="110000" value="30000"
+                     class="slider-scale-filter" id="myRange">
+<!--              <div class="price-controls">-->
+                <div class="max-price">
+                  <label class="price">
+                  Max цена:
+                  </label>
+                  <input class="price-controls" id="demo" value="30000">
+                </div>
+<!--              </div>-->
+            </div>
+          </div>
+          <!--          <div class="range-controls">-->
+          <!--            <div class="scale">-->
+          <!--              <div class="bar" style="width: 160px; margin-left: 0%"></div>-->
+          <!--            </div>-->
+          <!--            <div class="toggle toggle-min" tabindex="0" style="left: 8%"></div>-->
+          <!--            <div class="toggle toggle-max" tabindex="0" style="left: 73%"></div>-->
+          <!--          </div>-->
+
+        </div>
+      </fieldset>
+
+      <fieldset class="filter-item-1">
+        <legend class="filter-firms">Производители:</legend>
+        <ul class="filter-list">
+          <li class="filter-option filter-checkbox">
+            <input class="visually-hidden filter-input-checkbox filter-input" type="checkbox" name="bosch"
+                   id="filter-bosch" checked>
+            <label for="filter-bosch">bosch</label>
+          </li>
+          <li class="filter-option filter-checkbox">
+            <input class="visually-hidden filter-input-checkbox filter-input" type="checkbox" name="interskol"
+                   id="filter-interskol">
+            <label for="filter-interskol">интерскол</label>
+          </li>
+          <li class="filter-option filter-checkbox">
+            <input class="visually-hidden filter-input-checkbox filter-input" type="checkbox" name="makita"
+                   id="filter-makita" checked>
+            <label for="filter-makita">makita</label>
+          </li>
+          <li class="filter-option filter-checkbox">
+            <input class="visually-hidden filter-input-checkbox filter-input" type="checkbox" name="dewalt"
+                   id="filter-dewalt">
+            <label for="filter-dewalt">dewalt</label>
+          </li>
+          <li class="filter-option filter-checkbox">
+            <input class="visually-hidden filter-input-checkbox filter-input" type="checkbox" name="hitachi"
+                   id="filter-hitachi">
+            <label for="filter-hitachi">hitachi</label>
+        </ul>
+      </fieldset>
+      <button type="submit" class="filter-button button">Показать</button>
+    </form>
+  </aside>
+</div>

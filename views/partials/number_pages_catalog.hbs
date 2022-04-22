@@ -1,0 +1,9 @@
+<div class="number-pages">
+  <ul class="number-pages-list">
+    {{#each pageCountArr}}
+    <li class="number-pages-item number-pages-item-current">
+      <a href="/catalog?page={{this}}">{{this}}</a>
+    </li>
+    {{/each}}
+  </ul>
+</div>

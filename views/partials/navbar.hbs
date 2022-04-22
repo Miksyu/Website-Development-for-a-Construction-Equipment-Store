@@ -1,0 +1,10 @@
+<nav class="main-nav">
+  <ul class="site-nav">
+
+    {{#if menu.length}}
+      {{#each menu}}
+        <li class="main-nav-item" id="{{name}}"><a href="{{link}}">{{content}}</a></li>
+      {{/each}}
+    {{/if}}
+  </ul>
+</nav>

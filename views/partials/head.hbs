@@ -1,13 +1,58 @@
-<!DOCTYPE html>
-<html class="page" lang="ru">
-
 <head>
+
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-<!--  <title>HTML Academy: Техномарт</title>-->
+  <!--  <title>HTML Academy: Техномарт</title>-->
   <title>{{title}}</title>
   <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Cuprum:ital@0;1&family=PT+Sans:wght@400;700&display=swap">
-  <link rel="stylesheet" href="css/normalize.css">
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet"
+        href="../../css/normalize.css">
+  <link rel="stylesheet"
+        href="/style.css">
 </head>
+
+<header class="header">
+  <div class="header-top">
+    <div class="header-top-content">
+      <div class="logotip"><img src="img/logo-technomart.svg" class="logo1" alt="логотип" width="220" height="47">
+      </div>
+
+      <form action="http://g06u33.nn2000.info/cgi-bin/form_action.py" method="post" class="form-loupe">
+        <input type="search" name="comment" placeholder="Поиск:" class="input-loupe">
+        <button type="submit" class="button-loupe">
+        </button>
+      </form>
+      <div class="user-nav">
+        <a href="#" class="bookmark-link">
+          Закладки: 0
+        </a>
+      </div>
+      <a href="#" class="cart-link"> Корзина: 0</a>
+      <a href="#" class="order-link">Оформить заказ</a>
+    </div>
+
+  </div>
+
+  <div class="header-middle">
+    <div class="header-middle-content  container">
+      <p class="header-description">
+        Интернет-магазин строительных материалов <br>и инструментов для ремонта
+      </p>
+      <div class="header-middle-contacts">
+        <div class="header-middle-tel">
+          <a href="tel:+78125550555">+7 (831) 555-05-55</a>
+        </div>
+        <p class="header-middle-adress">г. Нижний Новгород, ул. Б. Покровская, д. 19/8
+        </p>
+      </div>
+      <div class="user-menu">
+        <button type="button" class="login log"><img src="img/icon-login.svg" class="icon-login" alt="иконка"
+                                                     width="21" height="17">Войти
+        </button>
+        <button type="button" class="login reg">Регистрация</button>
+      </div>
+    </div>
+  </div>
+  {{>navbar}}
+</header>

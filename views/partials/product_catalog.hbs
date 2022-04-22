@@ -1,0 +1,164 @@
+<section>
+  <h2 class="visually-hidden">Список инструментов</h2>
+  <ul class="perforators-list">
+
+    {{#if catalogGoods.length}}
+      {{#each catalogGoods}}
+        <li class="perforators-item {{#if isNew}}goods-item-new{{/if}}">
+          <div class="perforators-item-top">
+            <img src="img/{{img}}" alt="{{name}}" width="144" height="128" class="img-goods-item">
+            <div class="goods-checked visually-hidden">
+                <img src="img/icon-cart.svg" alt="иконка" width="15" height="15">
+              <a href="#" class="button-buy">Купить</a>
+              <a href="#" class="button-bookmark">В закладки</a>
+            </div>
+          </div>
+          <a href="#" class="perforators-item-link">
+            <h3 class="goods-description">{{name}}</h3>
+          </a>
+          <div class="perforators-item-price">
+            {{#if new_price}}
+              <p class="goods-old-price">{{old_price}} Р.</p>
+              <p class="goods-new-price">{{new_price}} Р.</p>
+            {{else}}
+              <p class="goods-new-price">{{old_price}} Р.</p>
+            {{/if}}
+          </div>
+        </li>
+      {{/each}}
+    {{/if}}
+
+
+
+    <!--    <li class="perforators-item">-->
+    <!--      <div class="perforators-item-top">-->
+    <!--        <img src="public/img/tool1.png" alt="Перфоратор BOSCH BFG 6000" width="144" height="128">-->
+    <!--      </div>-->
+    <!--      <a href="#" class="perforators-item-link">-->
+    <!--        <h3 class="goods-description">Перфоратор BOSCH BFG 6000</h3>-->
+    <!--      </a>-->
+    <!--      <div class="perforators-item-price">-->
+    <!--        <p class="perforators-old-price">30500 Р.</p>-->
+    <!--        <p class="perforators-new-price">25500 Р.</p>-->
+    <!--      </div>-->
+    <!--    </li>-->
+
+    <!--    <li class="perforators-item">-->
+    <!--      <div class="perforators-item-top">-->
+    <!--        <img src="public/img/tool2.png" alt="Перфоратор BOSCH BFG 6000" width="144" height="128">-->
+    <!--      </div>-->
+    <!--      <a href="#" class="perforators-item-link">-->
+    <!--        <h3 class="goods-description">Перфоратор BOSCH BFG 6000</h3>-->
+    <!--      </a>-->
+    <!--      <div class="perforators-item-price">-->
+    <!--        <p class="perforators-old-price">30500 Р.</p>-->
+    <!--        <p class="perforators-new-price">25500 Р.</p>-->
+    <!--      </div>-->
+    <!--    </li>-->
+
+    <!--    &lt;!&ndash;<li class="perforators-item">-->
+    <!--      <div class="perforators-item-top">-->
+    <!--        <img src="img/tool2.png" alt="Перфоратор BOSCH BFG 6000" width="144" height="128">-->
+    <!--      </div>-->
+    <!--      <a href="#" class="perforators-item-link">-->
+    <!--        <h3 class="goods-description">Перфоратор BOSCH BFG 2500</h3>-->
+    <!--      </a>-->
+    <!--      <div class="perforators-item-price">-->
+    <!--        <p class="perforators-old-price">24500 Р.</p>-->
+    <!--        <p class="perforators-new-price">20500 Р.</p>-->
+    <!--      </div>-->
+    <!--    </li>&ndash;&gt;-->
+    <!--    <li class="perforators-item  goods-item-new goods-checked">-->
+    <!--      <div class="perforators-item-top-1">-->
+    <!--        <img src="public/img/icon-cart.svg" alt="иконка" width="15" height="15">-->
+    <!--      </div>-->
+    <!--      <a href="#" class="button-buy">Купить</a>-->
+    <!--      <a href="#" class="button-bookmark">В закладки</a>-->
+    <!--      <a href="#" class="perforators-item-link-1">-->
+    <!--        <h3 class="goods-description">Перфоратор BOSCH BFG 6000</h3>-->
+    <!--      </a>-->
+    <!--      <div class="perforators-item-price">-->
+    <!--        <p class="perforators-old-price">30500 Р.</p>-->
+    <!--        <p class="perforators-new-price">25500 Р.</p>-->
+    <!--      </div>-->
+    <!--    </li>-->
+
+    <!--    <li class="perforators-item  goods-item-new">-->
+    <!--      <div class="perforators-item-top">-->
+    <!--        <img src="public/img/tool4.png" alt="Перфоратор BOSCH BFG 3000" width="127" height="112">-->
+    <!--      </div>-->
+    <!--      <a href="#" class="perforators-item-link">-->
+    <!--        <h3 class="goods-description">Перфоратор BOSCH BFG 3000</h3>-->
+    <!--      </a>-->
+    <!--      <div class="perforators-item-price">-->
+    <!--        <p class="perforators-old-price">22500 Р.</p>-->
+    <!--        <p class="perforators-new-price">15500 Р.</p>-->
+    <!--      </div>-->
+    <!--    </li>-->
+
+    <!--    <li class="perforators-item">-->
+    <!--      <div class="perforators-item-top">-->
+    <!--        <img src="public/img/tool5.png" alt="Перфоратор BOSCH BFG 6000" width="144" height="128">-->
+    <!--      </div>-->
+    <!--      <a href="#" class="perforators-item-link">-->
+    <!--        <h3 class="goods-description">Перфоратор BOSCH BFG 6000</h3>-->
+    <!--      </a>-->
+    <!--      <div class="perforators-item-price">-->
+    <!--        <p class="perforators-old-price">30500 Р.</p>-->
+    <!--        <p class="perforators-new-price">15500 Р.</p>-->
+    <!--      </div>-->
+    <!--    </li>-->
+
+    <!--    <li class="perforators-item  goods-item-new">-->
+    <!--      <div class="perforators-item-top">-->
+    <!--        <img src="public/img/tool6.png" alt="Перфоратор BOSCH BFG 2000" width="127" height="112">-->
+    <!--      </div>-->
+    <!--      <a href="#" class="perforators-item-link">-->
+    <!--        <h3 class="goods-description">Перфоратор BOSCH BFG 2000</h3>-->
+    <!--      </a>-->
+    <!--      <div class="perforators-item-price">-->
+    <!--        <p class="perforators-new-price">12500 Р.</p>-->
+    <!--      </div>-->
+    <!--    </li>-->
+
+    <!--    <li class="perforators-item  goods-item-new">-->
+    <!--      <div class="perforators-item-top">-->
+    <!--        <img src="public/img/tool7.png" alt="Перфоратор BOSCH BFG 3000" width="127" height="112">-->
+    <!--      </div>-->
+    <!--      <a href="#" class="perforators-item-link">-->
+    <!--        <h3 class="goods-description">Перфоратор BOSCH BFG 3000</h3>-->
+    <!--      </a>-->
+    <!--      <div class="perforators-item-price">-->
+    <!--        <p class="perforators-old-price">22500 Р.</p>-->
+    <!--        <p class="perforators-new-price">10500 Р.</p>-->
+    <!--      </div>-->
+    <!--    </li>-->
+
+    <!--    <li class="perforators-item">-->
+    <!--      <div class="perforators-item-top">-->
+    <!--        <img src="public/img/tool8.png" alt="Перфоратор BOSCH BFG 6000" width="144" height="128">-->
+    <!--      </div>-->
+    <!--      <a href="#" class="perforators-item-link">-->
+    <!--        <h3 class="goods-description">Перфоратор BOSCH BFG 6000</h3>-->
+    <!--      </a>-->
+    <!--      <div class="perforators-item-price">-->
+    <!--        <p class="perforators-old-price">35500 Р.</p>-->
+    <!--        <p class="perforators-new-price">10500 Р.</p>-->
+    <!--      </div>-->
+    <!--    </li>-->
+
+    <!--    <li class="perforators-item  goods-item-new">-->
+    <!--      <div class="perforators-item-top">-->
+    <!--        <img src="public/img/tool9.png" alt="Перфоратор BOSCH BFG 2000" width="127" height="112">-->
+    <!--      </div>-->
+    <!--      <a href="#" class="perforators-item-link">-->
+    <!--        <h3 class="goods-description">Перфоратор BOSCH BFG 2000</h3>-->
+    <!--      </a>-->
+    <!--      <div class="perforators-item-price">-->
+    <!--        <p class="perforators-old-price"></p>-->
+    <!--        <p class="perforators-new-price">9500 Р.</p>-->
+    <!--      </div>-->
+    <!--    </li>-->
+
+  </ul>
+</section>

@@ -1,0 +1,26 @@
+<section class="modal modal-registration visually-hidden">
+  <h2 class="visually-hidden">Модальное окно</h2>
+  <form action="/registration" method="post">
+
+    <div class="modal-top-registration">
+
+      <label class="name-registration" for="signup-username">Как вас зовут?</label>
+      <input class="signup-username" id="signup-username" type="text"
+             placeholder="Иванов Иван Иванович" name="name" required="required">
+
+      <label class="email-registration" for="signup-email">Какой у вас e-mail?</label>
+      <input class="signup-email" id="signup-email" type="email"
+             placeholder="email@example.com" name="email" required="required">
+
+      <label class="password-registration" for="signup-password">Придумайте пароль:</label>
+      <input class="signup-password" id="signup-password" type="password" minlength=8 maxlength=24
+             placeholder="••••••••" name="password" required="required">
+
+    </div>
+
+    <div class="modal-button-submit">
+      <button class="button" type="submit">Регистрация</button>
+    </div>
+    <button class="modal-close" type="button" aria-label="Закрыть"></button>
+  </form>
+</section>
