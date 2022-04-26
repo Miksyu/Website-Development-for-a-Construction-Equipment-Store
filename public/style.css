@@ -1892,6 +1892,7 @@ input[type="number"]::-webkit-inner-spin-button {
 
 .goods-checked {
   display: grid;
+  margin-top:15px;
 }
 
 .button-buy {
@@ -1903,7 +1904,7 @@ input[type="number"]::-webkit-inner-spin-button {
   text-align: center;
   padding-top: 10px;
   padding-bottom: 10px;
-  padding-left: 2px;
+  padding-left: 12px;
   text-transform: uppercase;
   color: var(--white);
   box-shadow: inset 0px -3px 0px var(--green-one);
@@ -2322,7 +2323,7 @@ input[type="number"]::-webkit-inner-spin-button {
 }
 
 .icon-mark {
-  top: 25%;
+  top: 29%;
   transform: translateY(-50%);
   position: absolute;
   left: 110px;

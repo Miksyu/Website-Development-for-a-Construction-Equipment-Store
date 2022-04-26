@@ -3,40 +3,84 @@ const navbar = require('../models/navbar')
 const router = Router()
 const pool = require('../db/db');
 const bodyParser = require("body-parser");
+const session = require('express-session');
+const nodemailer = require("nodemailer");
 
 //Here we are configuring express to use body-parser as middle-ware.
 router.use(bodyParser.urlencoded({ extended: false }));
 router.use(bodyParser.json());
 
+router.use(
+  session({
+    secret: 'you secret key',
+    saveUninitialized: true,
+  })
+)
+
 
 router.get('/', async (req, res) => {
-
   const menu = await pool.query('SELECT * FROM navbar ORDER BY position ASC')
   const popularGoods = await pool.query('SELECT * FROM products WHERE "isPopular" = true ORDER BY id ASC')
+
+  console.log(req.session.user)
 
   res.render('index', {
     title: 'Technomart. Homepage',
     menu: menu.rows,
-    popularGoods: popularGoods.rows
+    popularGoods: popularGoods.rows,
+    user: req.session.user
   })
 
 })
 
 router.post('/registration', async(req, res)=>{
-  await pool.query('INSERT INTO users (name, email, password) VALUES($1::varchar, $2::varchar, $3::varchar )', [req.body.name, req.body.email, req.body.password])
+  // technomart.ov@gmail.com
+  // @123zxcvb
+  try {
+    await pool.query('INSERT INTO users (name, email, password) VALUES($1::varchar, $2::varchar, $3::varchar )', [req.body.name, req.body.email, req.body.password]);
 
-  // res.redirect('/', {
-  //   message: 'Registration is successfully!'
-  // })
+    var transporter = nodemailer.createTransport({
+      service: 'gmail',
+      auth: {
+        user: 'technomart.ov@gmail.com',
+        pass: '@123zxcvb'
+      }
+    });
 
+    var mailOptions = {
+      from: 'technomart.ov@gmail.com',
+      to: req.body.email,
+      subject: 'Registration is successfully!',
+      html: '<h1>Welcome to The Technomart, ' + req.body.name + '!</h1>'
+    };
+
+    transporter.sendMail(mailOptions, function(error, info){
+      if (error) {
+        console.log(error);
+      } else {
+        console.log('Email sent: ' + info.response);
+      }
+    });
+  }
+  catch (e) {}
+
+  res.redirect('/');
 })
 
 router.post('/login', async(req, res)=>{
   let user = await pool.query('SELECT * FROM users WHERE email = $1::varchar and password = $2::varchar', [req.body.email, req.body.password])
-  console.log(user.rows)
-  // res.redirect('/', {
-  //   message: 'Registration is successfully!'
-  // })
+
+  if (user.rows.length) {
+    req.session.user = user.rows[0];
+  }
+  res.redirect('/');
+
+})
+
+router.get('/logout', async(req, res)=>{
+  req.session.user = null;
+
+  res.redirect('/');
 
 })
 
@@ -176,6 +220,17 @@ router.get('/contacts', async (req, res) => {
 
     res.render('contacts', {
       title: 'Technomart. Contacts',
+      menu: menu.rows
+    })
+  }
+)
+
+router.get('/basket', async (req, res) => {
+
+  const menu = await pool.query('SELECT * FROM navbar ORDER BY position ASC')
+
+    res.render('basket', {
+      title: 'Technomart. Basket',
       menu: menu.rows
     })
   }
