@@ -4,7 +4,9 @@ if (navbar_item === '/') {
 } else {
   navbar_item = navbar_item.substring(1)
 }
-document.getElementById(navbar_item).classList.add('site-nav-active')
+if (document.getElementById(navbar_item)) {
+  document.getElementById(navbar_item).classList.add('site-nav-active')
+}
 
 
 const modal = document.querySelectorAll('.modal');
@@ -48,7 +50,9 @@ function toggleModal(event) {
 loginPopup.addEventListener("click", toggleModal);
 log.addEventListener("click", toggleModal);
 registration.addEventListener("click", toggleModal);
-reg.addEventListener("click", toggleModal);
+if (reg) {
+  reg.addEventListener("click", toggleModal);
+}
 cart.forEach(button => button.addEventListener("click", toggleModal));
 cartPopup.addEventListener("click", toggleModal);
 modal.forEach(modal => modal.addEventListener("click", toggleModal));
@@ -59,12 +63,15 @@ continueClose.addEventListener("click", toggleModal);
 
 const slider = document.getElementById("myRange");
 const output = document.getElementById("demo");
-output.oninput = function () {
-  slider.value = this.value;
-}
-output.innerHTML = slider.value;
-slider.oninput = function () {
-  output.value = this.value;
+
+if (slider && output) {
+  output.oninput = function () {
+    slider.value = this.value;
+  }
+  output.innerHTML = slider.value;
+  slider.oninput = function () {
+    output.value = this.value;
+  }
 }
 
 const goodsItem = document.querySelectorAll('.perforators-item')
@@ -85,45 +92,91 @@ goodsItem.forEach(element => {
   })
 })
 
-// goodsItem.addEventListener("mouseover", function(e)
-// {
-//   imgGoodsItem.classList.add("visually-hidden")
-//   focusGoodsItem.classList.remove("visually-hidden")
-// })
+function setCookie(cname, cvalue, exdays) {
+  const d = new Date();
+  d.setTime(d.getTime() + (exdays*24*60*60*1000));
+  let expires = "expires="+ d.toUTCString();
+  document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+}
+
+function getCookie(cname) {
+  let name = cname + "=";
+  let decodedCookie = decodeURIComponent(document.cookie);
+  let ca = decodedCookie.split(';');
+  for(let i = 0; i <ca.length; i++) {
+    let c = ca[i];
+    while (c.charAt(0) == ' ') {
+      c = c.substring(1);
+    }
+    if (c.indexOf(name) == 0) {
+      return c.substring(name.length, c.length);
+    }
+  }
+  return "";
+}
+
+// Добавление в корзину
 
 
-// popup.addEventListener("click", function(){
-//   feedback.classList.remove('visually-hidden');
-// })
-//
-// close.addEventListener("click", function(){
-//   feedback.classList.add("visually-hidden")
-// })
-//
-// log.addEventListener("click", function(){
-//   login.classList.remove('visually-hidden');
-// })
-//
-// close.addEventListener("click", function(){
-//   login.classList.add('visually-hidden');
-// })
-//
-//
-//
-// const getClickGuarantee = guaranteeBut.onclick = function (){
-//   guarantee.classList.remove('visually-hidden')
-//   delivery.classList.add("visually-hidden")
-//   credit.classList.add("visually-hidden")
-//   deliveryBut.classList.remove("white-color")
-//   guaranteeBut.classList.add("white-color")
-// }
-//
-// /*const getClickDelivery = guaranteeBut.onclick = function (){
-//   delivery.classList.remove('visually-hidden')
-//   credit.classList.add("visually-hidden")
-//   guarantee.classList.add("visually-hidden")
-// }
-// */
-// byuInCart.addEventListener("click", function(){
-//   catalog.classList.remove('visually-hidden');
-// })
+var cartItems = getCookie('cart') ? JSON.parse(getCookie('cart')) : [];
+document.querySelectorAll('.cart-link')[0].children[1].innerText = cartItems.length;
+cart.forEach(element => {
+  element.addEventListener('click', async function (e) {
+    let product_id = e.target.closest('.goods-checked').children[2].innerText;
+    let flag = true;
+    cartItems.forEach(item => {
+      if (item === product_id) {
+        flag = false;
+      }
+    });
+    if (flag) {
+      cartItems.push(product_id)
+      document.querySelectorAll('.cart-link')[0].children[1].innerText = cartItems.length;
+      setCookie('cart', JSON.stringify(cartItems), 30);
+    }
+  })
+});
+
+function deleteAllCookies() {
+  var cookies = document.cookie.split(";");
+
+  for (var i = 0; i < cookies.length; i++) {
+    var cookie = cookies[i];
+    var eqPos = cookie.indexOf("=");
+    var name = eqPos > -1 ? cookie.substr(0, eqPos) : cookie;
+    document.cookie = name + "=;expires=Thu, 01 Jan 1970 00:00:00 GMT";
+  }
+}
+
+// Корзина
+
+
+if (window.location.pathname === '/basket') {
+  function setOrderSum() {
+    let itemPrices = document.querySelectorAll('.goods-new-price');
+    let sumPrice = 0;
+
+    itemPrices.forEach(element => {
+      sumPrice += Number(element.children[0].innerText);
+    });
+    document.getElementById('order_sum').value = sumPrice;
+  }
+
+  setOrderSum();
+
+  let basketItems = document.querySelectorAll('.button-cart-item-delete');
+  basketItems.forEach(element => {
+    element.addEventListener('click', async function (e) {
+      Object.keys(cartItems).forEach(key => {
+        if (cartItems[key] === e.target.closest('.goods-checked').children[2].innerText) {
+          cartItems.splice(key, 1);
+          document.querySelectorAll('.cart-link')[0].children[1].innerText = cartItems.length;
+          setCookie('cart', JSON.stringify(cartItems), 30);
+          e.target.closest('.perforators-item').remove();
+          setOrderSum();
+        }
+      });
+    });
+  });
+}
+

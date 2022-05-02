@@ -40,10 +40,11 @@ router.post('/registration', async(req, res)=>{
     await pool.query('INSERT INTO users (name, email, password) VALUES($1::varchar, $2::varchar, $3::varchar )', [req.body.name, req.body.email, req.body.password]);
 
     var transporter = nodemailer.createTransport({
-      service: 'gmail',
+      host: "smtp.mailtrap.io",
+      port: 2525,
       auth: {
-        user: 'technomart.ov@gmail.com',
-        pass: '@123zxcvb'
+        user: "b1a48609b3603e",
+        pass: "2dd81c541d4cb5"
       }
     });
 
@@ -166,6 +167,7 @@ router.get('/catalog', async (req, res) => {
       menu: menu.rows,
       catalogGoods: catalogGoods.rows,
       pageCountArr,
+      user: req.session.user
     })
   }
 )
@@ -176,7 +178,8 @@ router.get('/company', async (req, res) => {
 
     res.render('company', {
       title: 'Technomart. Company',
-      menu: menu.rows
+      menu: menu.rows,
+      user: req.session.user
     })
   }
 )
@@ -187,7 +190,8 @@ router.get('/news', async (req, res) => {
 
     res.render('news', {
       title: 'Technomart. News',
-      menu: menu.rows
+      menu: menu.rows,
+      user: req.session.user
     })
   }
 )
@@ -198,7 +202,8 @@ router.get('/special', async (req, res) => {
 
     res.render('special', {
       title: 'Technomart. Special',
-      menu: menu.rows
+      menu: menu.rows,
+      user: req.session.user
     })
   }
 )
@@ -209,7 +214,8 @@ router.get('/delivery', async (req, res) => {
 
     res.render('delivery', {
       title: 'Technomart. Delivery',
-      menu: menu.rows
+      menu: menu.rows,
+      user: req.session.user
     })
   }
 )
@@ -220,7 +226,8 @@ router.get('/contacts', async (req, res) => {
 
     res.render('contacts', {
       title: 'Technomart. Contacts',
-      menu: menu.rows
+      menu: menu.rows,
+      user: req.session.user
     })
   }
 )
@@ -229,11 +236,76 @@ router.get('/basket', async (req, res) => {
 
   const menu = await pool.query('SELECT * FROM navbar ORDER BY position ASC')
 
+  function parseCookies (request) {
+    const list = {};
+    const cookieHeader = request.headers?.cookie;
+    if (!cookieHeader) return list;
+
+    cookieHeader.split(`;`).forEach(function(cookie) {
+      let [ name, ...rest] = cookie.split(`=`);
+      name = name?.trim();
+      if (!name) return;
+      const value = rest.join(`=`).trim();
+      if (!value) return;
+      list[name] = decodeURIComponent(value);
+    });
+
+    return list;
+  }
+
+  let cookies = parseCookies(req);
+  let ids = JSON.parse(cookies.cart);
+
+  if (ids && ids.length) {
+    const basketGoods = await pool.query('SELECT * FROM products WHERE id IN (' + ids.join() + ')');
     res.render('basket', {
       title: 'Technomart. Basket',
-      menu: menu.rows
+      menu: menu.rows,
+      basketGoods: basketGoods.rows,
+      user: req.session.user
     })
+  } else {
+    res.redirect('/');
   }
-)
+})
+
+router.post('/order', async (req, res) => {
+  const order = await pool.query('INSERT INTO orders (name, email, sum) VALUES ($1, $2, $3) RETURNING id', [req.body.name, req.body.email, req.body.sum]);
+  const orderId = order.rows[0].id;
+  let assignSql = '';
+
+  function parseCookies (request) {
+    const list = {};
+    const cookieHeader = request.headers?.cookie;
+    if (!cookieHeader) return list;
+
+    cookieHeader.split(`;`).forEach(function(cookie) {
+      let [ name, ...rest] = cookie.split(`=`);
+      name = name?.trim();
+      if (!name) return;
+      const value = rest.join(`=`).trim();
+      if (!value) return;
+      list[name] = decodeURIComponent(value);
+    });
+
+    return list;
+  }
+
+  let cookies = parseCookies(req);
+  let product_ids = JSON.parse(cookies.cart);
+
+  Object.keys(product_ids).forEach(key => {
+    if (product_ids[Number(key) + 1]) {
+      assignSql += '(' + orderId + ',' + product_ids[key] + '),';
+    } else {
+      assignSql += '(' + orderId + ',' + product_ids[key] + ')';
+    }
+  });
+
+  await pool.query('INSERT INTO assign_order_products (order_id, product_id) VALUES ' + assignSql);
+
+  res.redirect('/');
+
+})
 
 module.exports = router

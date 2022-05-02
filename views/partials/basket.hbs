@@ -1,0 +1,58 @@
+<section>
+  <h2>Список товаров в корзине</h2>
+  <ul class="perforators-list">
+
+    {{#if basketGoods.length}}
+      {{#each basketGoods}}
+        <li class="perforators-item">
+          <div class="perforators-item-top">
+            <img src="img/{{img}}" alt="{{name}}" width="144" height="128" class="img-goods-item">
+            <div class="goods-checked visually-hidden">
+              <img src="img/icon-cart.svg" alt="иконка" width="15" height="15">
+              <a href="#" class="button-cart-item-delete"><Удалить></Удалить></a>
+              <div class="visually-hidden" id="product_id">{{id}}</div>
+            </div>
+          </div>
+          <a href="#" class="perforators-item-link">
+            <h3 class="goods-description">{{name}}</h3>
+          </a>
+          <div class="perforators-item-price">
+            {{#if new_price}}
+              <p class="goods-old-price">{{old_price}} Р.</p>
+              <p class="goods-new-price">
+                <span>{{new_price}}</span>
+                <span> Р.</span>
+              </p>
+            {{else}}
+              <p class="goods-new-price">
+                <span>{{old_price}}</span>
+                <span> Р.</span>
+              </p>
+            {{/if}}
+          </div>
+        </li>
+      {{/each}}
+    {{/if}}
+
+  </ul>
+</section>
+<section>
+  <h2>Оформить заказ</h2>
+  <div>
+    <form method="post" action="/order">
+      <div>
+        <label>Сумма заказа</label>
+        <input name="sum" readonly id="order_sum" required>
+      </div>
+      <div>
+        <label>Имя</label>
+        <input name="name" {{#if user}} value="{{user.name}}" {{/if}} required>
+      </div>
+      <div>
+        <label>Email</label>
+        <input name="email" {{#if user}} value="{{user.email}}" {{/if}} required>
+      </div>
+      <button type="submit">Оформить</button>
+    </form>
+  </div>
+</section>
