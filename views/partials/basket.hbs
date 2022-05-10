@@ -1,5 +1,5 @@
 <section>
-  <h2>Список товаров в корзине</h2>
+  <h2 class="basket-list-orders-title">Товары в корзине</h2>
   <ul class="perforators-list">
 
     {{#if basketGoods.length}}
@@ -9,7 +9,7 @@
             <img src="img/{{img}}" alt="{{name}}" width="144" height="128" class="img-goods-item">
             <div class="goods-checked visually-hidden">
               <img src="img/icon-cart.svg" alt="иконка" width="15" height="15">
-              <a href="#" class="button-cart-item-delete"><Удалить></Удалить></a>
+              <a href="#" class="button-cart-item-delete">Удалить</a>
               <div class="visually-hidden" id="product_id">{{id}}</div>
             </div>
           </div>
@@ -36,23 +36,23 @@
 
   </ul>
 </section>
-<section>
-  <h2>Оформить заказ</h2>
-  <div>
+<section class="make-order">
+  <h2 class="make-order-title">Оформить заказ</h2>
+  <div  class="make-order-container">
     <form method="post" action="/order">
-      <div>
+      <div class="make-order-points">
         <label>Сумма заказа</label>
-        <input name="sum" readonly id="order_sum" required>
+        <input class="data-order" name="sum" readonly id="order_sum" required>
       </div>
-      <div>
+      <div class="make-order-points">
         <label>Имя</label>
-        <input name="name" {{#if user}} value="{{user.name}}" {{/if}} required>
+        <input class="other-data-order" name="name" {{#if user}} value="{{user.name}}" {{/if}} required>
       </div>
-      <div>
+      <div class="make-order-points">
         <label>Email</label>
-        <input name="email" {{#if user}} value="{{user.email}}" {{/if}} required>
+        <input class="other-data-order"  name="email" {{#if user}} value="{{user.email}}" {{/if}} required>
       </div>
-      <button type="submit">Оформить</button>
+      <button type="submit" class="button red-button-order">Оформить</button>
     </form>
   </div>
 </section>

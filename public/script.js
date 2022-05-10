@@ -17,6 +17,7 @@ const loginPopup = document.querySelector('.modal-login');
 const log = document.querySelector('.log');
 const registration = document.querySelector('.modal-registration');
 const reg = document.querySelector('.reg');
+const notifications = document.querySelector('.modal-notification')
 const close = document.querySelectorAll('.modal-close');
 const continueClose = document.querySelector('.continue-byu')
 
@@ -28,27 +29,38 @@ const loginLogin = loginPopup.querySelector(".login-user");
 // const credit = document.querySelector('.services-credit');
 
 function toggleModal(event) {
+  console.log(event);
   if (event.target.matches('.log')) {
     loginPopup.classList.toggle("visually-hidden");
     loginLogin.focus();
 
   } else if (event.target.matches('.reg')) {
     registration.classList.toggle("visually-hidden");
-  } else if (event.target.matches('.modal-login .modal-close')) {
+  }
+  else if (event.target.matches('.modal-login .modal-close')) {
     loginPopup.classList.toggle("visually-hidden");
-  } else if (event.target.matches('.modal-registration .modal-close')) {
+  }
+  else if (event.target.matches('.modal-registration .modal-close')) {
     registration.classList.toggle("visually-hidden");
-  } else if (event.target.matches('.button-buy')) {
+  }
+  else if (event.target.matches('.button-buy')) {
     cartPopup.classList.toggle("visually-hidden");
-  } else if (event.target.matches('.modal-catalog .modal-close')) {
+  }
+  else if (event.target.matches('.modal-catalog .modal-close')) {
     cartPopup.classList.toggle("visually-hidden");
-  } else if (event.target.matches('.modal-catalog .continue-byu')) {
+  }
+  else if (event.target.matches('.modal-catalog .continue-byu')) {
     cartPopup.classList.toggle("visually-hidden");
+  }
+  else if (event.target.matches('.modal-notification .modal-close')) {
+    notifications.classList.toggle("visually-hidden");
   }
 }
 
 loginPopup.addEventListener("click", toggleModal);
-log.addEventListener("click", toggleModal);
+if(log) {
+  log.addEventListener("click", toggleModal);
+}
 registration.addEventListener("click", toggleModal);
 if (reg) {
   reg.addEventListener("click", toggleModal);
@@ -58,7 +70,9 @@ cartPopup.addEventListener("click", toggleModal);
 modal.forEach(modal => modal.addEventListener("click", toggleModal));
 close.forEach(button => button.removeEventListener("click", toggleModal));
 continueClose.addEventListener("click", toggleModal);
-
+if(notifications) {
+  notifications.addEventListener("click", toggleModal);
+}
 
 
 const slider = document.getElementById("myRange");
@@ -180,3 +194,15 @@ if (window.location.pathname === '/basket') {
   });
 }
 
+// Messages
+
+let message = getCookie('message');
+
+if (message) {
+  notifications.children[1].children[0].innerText = message;
+  setCookie('message', '', 30);
+} else {
+  notifications.classList.add('visually-hidden')
+}
+
+console.log(document.cookie)

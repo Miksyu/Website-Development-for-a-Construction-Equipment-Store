@@ -49,15 +49,16 @@
       </div>
       <div class="user-menu">
         {{#if user}}
-          <div>{{user.name}}</div>
-          <a href="/logout" class="login log"><img src="img/icon-login.svg" class="icon-login" alt="иконка"
-                                                       width="21" height="17">Выйти
-          </a>
+          <button type="submit" class="logged"><img src="img/icon-user.svg" class="logged-img logged-img-1" alt="иконка"
+                                                    width="20" height="18">{{user.name}}
+            <a href="/logout"> <img src="img/icon-logged.svg" alt="иконка"
+                                                      class="logged-img logged-img-2" width="20" height="17"></a>
+          </button>
         {{else}}
-        <button type="button" class="login log"><img src="img/icon-login.svg" class="icon-login" alt="иконка"
-                                                     width="21" height="17">Войти
-        </button>
-        <button type="button" class="login reg">Регистрация</button>
+          <button type="button" class="login log"><img src="img/icon-login.svg" class="icon-login" alt="иконка"
+                                                       width="21" height="17">Войти
+          </button>
+          <button type="button" class="login reg">Регистрация</button>
         {{/if}}
       </div>
     </div>

@@ -1,10 +1,17 @@
-const {Router} = require('express')
-const navbar = require('../models/navbar')
-const router = Router()
-const pool = require('../db/db');
+const {Router} = require('express');
+const router = Router();
 const bodyParser = require("body-parser");
 const session = require('express-session');
-const nodemailer = require("nodemailer");
+const indexController = require('../controllers/indexController');
+const userController = require('../controllers/userController');
+const catalogController = require('../controllers/catalogController');
+const companyController = require('../controllers/companyController');
+const newsController = require('../controllers/newsController');
+const specialController = require('../controllers/specialController');
+const deliveryController = require('../controllers/deliveryController');
+const contactsController = require('../controllers/contactsController');
+const baskerController = require('../controllers/basketController');
+const orderController = require('../controllers/orderController');
 
 //Here we are configuring express to use body-parser as middle-ware.
 router.use(bodyParser.urlencoded({ extended: false }));
@@ -18,294 +25,28 @@ router.use(
 )
 
 
-router.get('/', async (req, res) => {
-  const menu = await pool.query('SELECT * FROM navbar ORDER BY position ASC')
-  const popularGoods = await pool.query('SELECT * FROM products WHERE "isPopular" = true ORDER BY id ASC')
+router.get('/', indexController.index);
 
-  console.log(req.session.user)
+router.post('/registration', userController.addUser);
 
-  res.render('index', {
-    title: 'Technomart. Homepage',
-    menu: menu.rows,
-    popularGoods: popularGoods.rows,
-    user: req.session.user
-  })
+router.post('/login', userController.login);
 
-})
+router.get('/logout', userController.logout);
 
-router.post('/registration', async(req, res)=>{
-  // technomart.ov@gmail.com
-  // @123zxcvb
-  try {
-    await pool.query('INSERT INTO users (name, email, password) VALUES($1::varchar, $2::varchar, $3::varchar )', [req.body.name, req.body.email, req.body.password]);
+router.get('/catalog', catalogController.index);
 
-    var transporter = nodemailer.createTransport({
-      host: "smtp.mailtrap.io",
-      port: 2525,
-      auth: {
-        user: "b1a48609b3603e",
-        pass: "2dd81c541d4cb5"
-      }
-    });
+router.get('/company', companyController.index);
 
-    var mailOptions = {
-      from: 'technomart.ov@gmail.com',
-      to: req.body.email,
-      subject: 'Registration is successfully!',
-      html: '<h1>Welcome to The Technomart, ' + req.body.name + '!</h1>'
-    };
+router.get('/news', newsController.index);
 
-    transporter.sendMail(mailOptions, function(error, info){
-      if (error) {
-        console.log(error);
-      } else {
-        console.log('Email sent: ' + info.response);
-      }
-    });
-  }
-  catch (e) {}
+router.get('/special', specialController.index);
 
-  res.redirect('/');
-})
+router.get('/delivery', deliveryController.index);
 
-router.post('/login', async(req, res)=>{
-  let user = await pool.query('SELECT * FROM users WHERE email = $1::varchar and password = $2::varchar', [req.body.email, req.body.password])
+router.get('/contacts', contactsController.index);
 
-  if (user.rows.length) {
-    req.session.user = user.rows[0];
-  }
-  res.redirect('/');
+router.get('/basket', baskerController.index);
 
-})
-
-router.get('/logout', async(req, res)=>{
-  req.session.user = null;
-
-  res.redirect('/');
-
-})
-
-router.get('/catalog', async (req, res) => {
-
-    const menu = await pool.query('SELECT * FROM navbar ORDER BY position ASC')
-
-  // Пагинация
-  const perPage = 6;
-    let page = 1;
-
-    if(req.query.page) {
-      page = req.query.page;
-    }
-
-    // Сортировка
-
-    let sortColumn = 'id';
-    let sortType = 'ASC';
-
-    if(req.query.sort){
-      sortColumn = req.query.sort;
-    }
-
-    if (req.query.sort_type) {
-      sortType = req.query.sort_type;
-    }
-
-    let sort = sortColumn + ' ' + sortType;
-
-    // Фильтр
-
-    //Цена
-
-    let minPrice = 0;
-    let maxPrice = 999999999;
-
-    if(req.query.min_price) {
-      minPrice = req.query.min_price;
-    }
-
-    if(req.query.max_price) {
-      maxPrice = req.query.max_price;
-    }
-
-    // Производитель
-
-    let brands = [];
-
-  for (const [key, value] of Object.entries(req.query)) {
-    if (value === 'on') {
-      brands.push(key);
-    }
-  }
-
-    const catalogGoods = await pool.query(
-      'SELECT * FROM products WHERE old_price >= $3::integer  AND old_price <= $4::integer ORDER BY '
-      + sort +
-      ' LIMIT $1::integer OFFSET $2::integer',
-      [
-        perPage,
-        perPage * (page - 1),
-        minPrice,
-        maxPrice
-      ]
-    )
-
-  ///////////////////////////////////
-
-      //Количесво страниц
-
-  const allProducts = await pool.query('SELECT COUNT(*) as num FROM products');
-    const pageCount = Math.ceil(allProducts.rows[0].num/perPage)
-    let pageCountArr = [];
-    for (let i = 1; i <= pageCount; i++) {
-      pageCountArr.push(i);
-    }
-
-  ///////////////////////////////////
-
-    res.render('catalog', {
-      title: 'Technomart. Catalog',
-      menu: menu.rows,
-      catalogGoods: catalogGoods.rows,
-      pageCountArr,
-      user: req.session.user
-    })
-  }
-)
-
-router.get('/company', async (req, res) => {
-
-    const menu = await pool.query('SELECT * FROM navbar ORDER BY position ASC')
-
-    res.render('company', {
-      title: 'Technomart. Company',
-      menu: menu.rows,
-      user: req.session.user
-    })
-  }
-)
-
-router.get('/news', async (req, res) => {
-
-    const menu = await pool.query('SELECT * FROM navbar ORDER BY position ASC')
-
-    res.render('news', {
-      title: 'Technomart. News',
-      menu: menu.rows,
-      user: req.session.user
-    })
-  }
-)
-
-router.get('/special', async (req, res) => {
-
-    const menu = await pool.query('SELECT * FROM navbar ORDER BY position ASC')
-
-    res.render('special', {
-      title: 'Technomart. Special',
-      menu: menu.rows,
-      user: req.session.user
-    })
-  }
-)
-
-router.get('/delivery', async (req, res) => {
-
-    const menu = await pool.query('SELECT * FROM navbar ORDER BY position ASC')
-
-    res.render('delivery', {
-      title: 'Technomart. Delivery',
-      menu: menu.rows,
-      user: req.session.user
-    })
-  }
-)
-
-router.get('/contacts', async (req, res) => {
-
-    const menu = await pool.query('SELECT * FROM navbar ORDER BY position ASC')
-
-    res.render('contacts', {
-      title: 'Technomart. Contacts',
-      menu: menu.rows,
-      user: req.session.user
-    })
-  }
-)
-
-router.get('/basket', async (req, res) => {
-
-  const menu = await pool.query('SELECT * FROM navbar ORDER BY position ASC')
-
-  function parseCookies (request) {
-    const list = {};
-    const cookieHeader = request.headers?.cookie;
-    if (!cookieHeader) return list;
-
-    cookieHeader.split(`;`).forEach(function(cookie) {
-      let [ name, ...rest] = cookie.split(`=`);
-      name = name?.trim();
-      if (!name) return;
-      const value = rest.join(`=`).trim();
-      if (!value) return;
-      list[name] = decodeURIComponent(value);
-    });
-
-    return list;
-  }
-
-  let cookies = parseCookies(req);
-  let ids = JSON.parse(cookies.cart);
-
-  if (ids && ids.length) {
-    const basketGoods = await pool.query('SELECT * FROM products WHERE id IN (' + ids.join() + ')');
-    res.render('basket', {
-      title: 'Technomart. Basket',
-      menu: menu.rows,
-      basketGoods: basketGoods.rows,
-      user: req.session.user
-    })
-  } else {
-    res.redirect('/');
-  }
-})
-
-router.post('/order', async (req, res) => {
-  const order = await pool.query('INSERT INTO orders (name, email, sum) VALUES ($1, $2, $3) RETURNING id', [req.body.name, req.body.email, req.body.sum]);
-  const orderId = order.rows[0].id;
-  let assignSql = '';
-
-  function parseCookies (request) {
-    const list = {};
-    const cookieHeader = request.headers?.cookie;
-    if (!cookieHeader) return list;
-
-    cookieHeader.split(`;`).forEach(function(cookie) {
-      let [ name, ...rest] = cookie.split(`=`);
-      name = name?.trim();
-      if (!name) return;
-      const value = rest.join(`=`).trim();
-      if (!value) return;
-      list[name] = decodeURIComponent(value);
-    });
-
-    return list;
-  }
-
-  let cookies = parseCookies(req);
-  let product_ids = JSON.parse(cookies.cart);
-
-  Object.keys(product_ids).forEach(key => {
-    if (product_ids[Number(key) + 1]) {
-      assignSql += '(' + orderId + ',' + product_ids[key] + '),';
-    } else {
-      assignSql += '(' + orderId + ',' + product_ids[key] + ')';
-    }
-  });
-
-  await pool.query('INSERT INTO assign_order_products (order_id, product_id) VALUES ' + assignSql);
-
-  res.redirect('/');
-
-})
+router.post('/order', orderController.addOrder);
 
 module.exports = router
