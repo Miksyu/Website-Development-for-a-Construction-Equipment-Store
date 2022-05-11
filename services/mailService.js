@@ -2,6 +2,7 @@
 // @123zxcvb
 
 const nodemailer = require("nodemailer");
+
 exports.sendMail = function(email, html, subject) {
   try {
     var transporter = nodemailer.createTransport({

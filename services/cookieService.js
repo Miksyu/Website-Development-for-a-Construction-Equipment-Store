@@ -17,6 +17,9 @@ function parseCookies(request) {
 
 exports.getCookie = function(req, name) {
   let cookies = parseCookies(req);
-
-  return JSON.parse(cookies[name]);
+  try {
+    return JSON.parse(cookies[name]);
+  } catch {
+    return [];
+  }
 };
